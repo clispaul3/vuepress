@@ -3,4 +3,4 @@
 set -e
 git add .
 git commit -m 'commit by zyb'
-git push -u origin vuepress
+git push -u vuepress master
