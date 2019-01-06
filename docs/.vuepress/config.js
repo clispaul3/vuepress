@@ -1,5 +1,4 @@
 const { sidebar } = require('./config/sidebar')
-console.log(sidebar)
 const { nav } = require('./config/nav')
 module.exports = {
     title:'50号公路的技术博客',
@@ -11,7 +10,7 @@ module.exports = {
         nav,
         sidebar,
         sidebarDepth:1,
-        lastUpdated:'last updated'
+        lastUpdated:'最后更新'
     },
     configureWebpack: {
         resolve: {
