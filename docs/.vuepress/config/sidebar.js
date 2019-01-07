@@ -13,6 +13,22 @@ const sidebar = {
     ],
     '/tooldocs/':[
         '工具文档'
+    ],
+    '/project/':[
+        'reactChatWeb',
+        'reactChatPC'
+    ],
+    '/vue/':[
+        ''
+    ],
+    '/react/':[
+        ''
+    ],
+    '/electron/':[
+        ''
+    ],
+    '/webpack/':[
+        ''
     ]
 }
 module.exports = {

@@ -22,6 +22,31 @@ const nav = [
             {
                 text:'tooldocs',
                 link:'/tooldocs/工具文档'
+            },{
+                text:'webpack',
+                link:'/webpack/'
+            }
+        ]
+    },{
+        text:'项目',
+        items:[
+            {
+                text:'react-chat',
+                link:'/project/reactChatPC'
+            }
+        ]
+    },{
+        text:'框架',
+        items:[
+            {
+                text:'vue',
+                link:'/vue/'
+            },{
+                text:'react',
+                link:'/react/'
+            },{
+                text:'electron',
+                link:'/electron/'
             }
         ]
     },
