@@ -7,12 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "commit":"bash commit.sh"
+    "commit": "bash commit.sh"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "async": "^2.6.1",
+    "lodash": "^4.17.11",
     "vuepress": "^0.14.8"
   }
 }
