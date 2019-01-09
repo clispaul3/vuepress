@@ -1,7 +1,8 @@
 const sidebar = {
     '/javascript/':[
         'one',
-        'es6/two'
+        'es6',
+        '代码规范'
     ],
     '/php/':[
         '基本语法',
