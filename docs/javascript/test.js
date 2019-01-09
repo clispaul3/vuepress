@@ -1,23 +1,12 @@
-const arr = new Set([1,2,3,4,5,1,2])
-console.log(arr)
-{
-    const friends = new Set([
-        {name:"sunwukong",age:500},
-        {name:"zhubajie",age:600},
-        {name:"shaheshang",age:700},
-        {name:"sunwukong",age:500}
-    ])
-    console.log(friends) 
-    const result = friends.delete({name:'sunwukong',age:500})
-    console.log(result)
-    console.log('-------------')
-    console.log(friends.entries())
-    console.log('-------------')
+const obj = {}
+if(obj){
+    console.log('我不是空对象')
+}else{
+    console.log('我是空对象')
 }
-{
-    let obj = new Set([{
-        name:'swk',
-        age:500
-    }])
-    console.log(obj)
-}
+const keys = Object.keys(obj)
+console.log(keys)
+const str = JSON.stringify(obj)
+console.log(str=='{}')
+const map = new Map([obj])
+console.log(map.keys())
