@@ -21,5 +21,5 @@ features:
 
   details: linux + mysql + php + phpmyadmin + thinkphp
 
-footer: Copyright © 2019-present Yangbin Zhang
+footer: Copyright © 2019-present Yangbin Zhang 253626232@qq.com
 ---

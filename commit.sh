@@ -1,6 +1,5 @@
-!/usr/bin/env sh
+#!/usr/bin/env bash
 set -e
 git add .
 git commit -m 'commit by zyb'
-git pull
 git push -u vuepress master
