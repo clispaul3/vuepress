@@ -25,6 +25,9 @@ const nav = [
             },{
                 text:'webpack',
                 link:'/webpack/'
+            },{
+                text:'shell',
+                link:'/shell/'
             }
         ]
     },{
