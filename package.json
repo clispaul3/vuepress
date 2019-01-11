@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "commit": "bash commit.sh"
+    "commit": "bash ./commit.sh",
+    "start":"bash ./docs/shell/scripts/updatefile.sh"
   },
   "keywords": [],
   "author": "",

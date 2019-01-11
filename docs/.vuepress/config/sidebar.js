@@ -30,6 +30,9 @@ const sidebar = {
     ],
     '/webpack/':[
         ''
+    ],
+    '/shell/':[
+        ''
     ]
 }
 module.exports = {
