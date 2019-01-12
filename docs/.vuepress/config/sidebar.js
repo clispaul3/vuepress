@@ -1,6 +1,6 @@
 const sidebar = {
     '/javascript/':[
-        'one',
+        'apply-call-bind',
         'es6',
         '代码规范'
     ],
