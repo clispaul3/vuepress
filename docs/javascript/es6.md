@@ -37,7 +37,8 @@ console.log(friends.length) // => 4 引用数据类型无法去重
     ([key, value]) => map.set(key, value)
   )
   ```
-### async/await
+## async/await
+   + async 
 ```
 async function fn1(){
     return 'res'
@@ -79,6 +80,7 @@ result.then(res=>{
 })
 执行结果:fn1->fn2->fn3
 ```
+   + await
 ```
 function fn2(){
     return new Promise((resolve,reject)=>{
@@ -98,10 +100,16 @@ async function fn1(){
     console.time('out')
     const res2 = await fn2()
     const res3 = await fn3()
-    console.log(res2,res3)
+    console.log(res2,res3) // 3s后输出 => fn2 fn3
     console.timeEnd('out')
+    const res4 = await Promise.all([fn2(),fn3()])
+    console.log(res4) // 6s后输出 => ['fn2','fn3']
+    const res5 = await Promise.race([fn2(),fn3()])
+    console.log(res5) // 7s后输出 => fn3
 }
-fn1() // 3s后输出 => fn2 fn3
+fn1() 
 总结: 1. await必须在async内部定义
      2. await 等待的必须是实例化Promise对象，得到的结果是resolve接收的值
+     3. Promise.all等待最后一个Promise执行完成，把所有执行结果放在数组里
+     4. Promise.race 将最先执行完成的结果输出,其他的Promisea仍然在执行，但执行结果不会放到res5
 ```
