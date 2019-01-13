@@ -7,7 +7,8 @@ const sidebar = {
     '/php/':[
         '基本语法',
         '面向对象',
-        'mysql'
+        'mysql',
+        'PDO'
     ],
     '/markdown/':[
         '基本语法'
