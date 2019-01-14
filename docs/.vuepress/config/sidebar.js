@@ -8,7 +8,8 @@ const sidebar = {
         '基本语法',
         '面向对象',
         'mysql',
-        'PDO'
+        'PDO',
+        'phpmyadmin'
     ],
     '/markdown/':[
         '基本语法'
