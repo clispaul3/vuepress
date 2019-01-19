@@ -35,6 +35,9 @@ const sidebar = {
     ],
     '/shell/':[
         ''
+    ],
+    '/Linux/':[
+        ''
     ]
 }
 module.exports = {

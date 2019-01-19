@@ -28,6 +28,9 @@ const nav = [
             },{
                 text:'shell',
                 link:'/shell/'
+            },{
+                text:'Linux',
+                link:'/Linux/'
             }
         ]
     },{
