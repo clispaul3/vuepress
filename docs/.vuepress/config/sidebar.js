@@ -9,7 +9,10 @@ const sidebar = {
         '面向对象',
         'mysql',
         'PDO',
-        'phpmyadmin'
+        'phpmyadmin',
+        'mvc',
+        '常用函数',
+        'ThinkPHP'
     ],
     '/markdown/':[
         '基本语法'
