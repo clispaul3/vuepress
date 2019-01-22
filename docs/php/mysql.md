@@ -106,9 +106,15 @@
    1. 基本语法
    ```
    create table tablename (
-      id init(10),
-      name varchar(20)
+      id int(10),
+      name varchar(20),
+      password char(32),
+      birthday date
    ) character set utf8 collate utf8_general_ci engine innodb;
+   注意：存储引擎为myisam时，数据被保存在三个文件中,myisam不支持事务
+      1. .frm => 存储表结构
+      2. .MYD => 存储数据
+      3. .MYI => 存储索引
    ```
 ### 其他
    1. select now();查看当前时间 
