@@ -1,4 +1,4 @@
-# mysql 
+# MySQL 
 ## 相关概念
    + DB
    + DBMS
@@ -30,11 +30,15 @@
       + 单行注释：#注释文字
       + 单行注释：-- 注释文字
       + 多行注释：/* 注释文字 */
-### SQL语言
-   + DQL 数据库查询(查)
-   + DML 数据库操作(增，删，改)
-   + DDL 库、表的操作
-   + TCL 事物控制
+### SQL语句分类
+   + DQL 数据查询语句
+      + select
+   + DML 数据操作语句
+      + update、insert、delete
+   + DDL 数据定义语句
+      + create、alter
+   + DCL 数据控制语句
+      + grant、revoke、commit、rollback、savepoint等
 ### 字符集
    + 字符是各种文字和符号的总称，包括各国家文字、标点符号、图形文字、数字等
    + 在计算机中所看到的任何内容都是字符构成的
@@ -49,5 +53,65 @@
    + 字符串类型指CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM和SET。
 #### CHAR & VARCHAR
 
-## sql语句
-   
+## sql基本操作
+### 库操作
+   + create database dbname [库选项];
+      + 库选项：用于约束数据库,分为两个选项
+         + 字符集设定: charset/character set 字符集(数据存储的编码格式)
+            + 常用字符集: utf8 & gbk
+         + 校对集设定: collate 校对集(数据比较的规则)
+      + show databases;
+## 常用命令行  
+### 连接数据库
+   1. mysql -uzyb -p(连接本地数据库)
+   2. mysqp -hwww.baidu.com -P3306 -uzyb -p(连接远程数据库)
+   3. 修改密码
+      1. 进入mysql的bin目录
+      2. 执行: mysqladmin -uzyb -p oldpsd password newpsd
+   4. show grants; 查看权限
+   5. show grants for 'zyb'@'localhost'; 查看某个用户的权限
+### 库操作
+   1. create database dbname; 创建数据库
+      + create database dbname character set utf8;
+      + create database dbname character set utf8 collate utf8_general_ci;
+   2. drop database dbname; 删除数据库
+      + drop database if exists dbname;
+   3. show databases; 查看数据库
+   4. use dbname; 使用数据库
+   5. select database(); 查看当前在哪个数据库
+   6. select version(); 查看数据库的版本
+   7. show processlist; 查看当前有多少个进程连接数据库
+   8. mysqldump -uzyb -p dbname > D:/mysql/backup/data0122.sql 备份数据库
+      + mysqldump -uzyb -p dbname tablename1 tablename2 > 
+        D:/mysql/backup/data0122.sql
+      + mysqldump -uzyb -p -B dbname1 daname2 > 
+      D:/mysql/backup/data0122.sql
+   9. 还原数据:
+      1. create database dbname character set utf8;
+      2. source D:/mysql/backup/data0122.sql;
+   10. 数据库修改：字符集 | 校对规则 | 存储引擎
+       + alter database dbname character set utf8;
+       + alter database dbname charset=utf8;
+       + alter database dbname collate utf8_general_ci;
+   11. show variables like '%char%'; 查看字符集
+       + character_set_client
+       + character_set_connection
+       + character_set_database
+       + character_set_server
+   12. show variables like '%collation%'; 查看校对规则
+       + collation_client
+       + collation_connection
+       + collation_server
+### 表操作
+   1. 基本语法
+   ```
+   create table tablename (
+      id init(10),
+      name varchar(20)
+   ) character set utf8 collate utf8_general_ci engine innodb;
+   ```
+### 其他
+   1. select now();查看当前时间 
+   2. show character set; 查看所有字符集
+   3. show collation; 查看所有校对规则
+   4. show create database dbname; 查看创建数据库时的sql语句
