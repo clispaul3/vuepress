@@ -47,11 +47,28 @@
    + 常见字符集 ASCII、GB2312、BIG5、GB18030、Unicode
 ## 数据类型
    [文档](https://www.cnblogs.com/Caveolae/p/7058890.html '数据类型')  
-### 整数类型
-   !['数据类型'](/img/mysql-int.png 'init类型')
+### 数值类型 
+   1. 整数类型 
+
+      !['数据类型'](/img/mysql-int.png 'init类型')
+      + 是否有符号可以修改，是否有符号会改变值的范围,默认是有符号的
+         + create table tablename(id tinyint unsigned); 无符号(0,255)
+         + create table tablename(id tinint signed); 有符号(-128,127)
+         + create table tablename(id tinyint unsigned not null default 0);
+   2. 浮点类型
+   3. zerofill
+
+     create table tablename(
+         num1 int,
+         num2 int(4) zerofill, comment '不足4位，前面自动以0填充,超过则不填充'
+         num3 int(6) unsigned zerofill '不足6位，前面自动以0填充,超过则不填充'
+     );
+     注意事项：1. zerofill只能和unsigned配合使用
+              2. 如果指定了 zerofill，则默认是unsigned
 ### 字符串类型
    + 字符串类型指CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM和SET。
-#### CHAR & VARCHAR
+### 日期
+### 
 
 ## sql基本操作
 ### 库操作
@@ -103,7 +120,7 @@
        + collation_connection
        + collation_server
 ### 表操作
-   1. 基本语法
+   1. 创建表
    ```
    create table tablename (
       id int(10),
@@ -116,6 +133,9 @@
       2. .MYD => 存储数据
       3. .MYI => 存储索引
    ```
+   2. show tables; 查看所有表
+   3. desc tablename; 查看表结构
+   4. drop table tablename; 删除表
 ### 其他
    1. select now();查看当前时间 
    2. show character set; 查看所有字符集
