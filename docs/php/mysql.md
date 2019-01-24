@@ -55,20 +55,77 @@
          + create table tablename(id tinyint unsigned); 无符号(0,255)
          + create table tablename(id tinint signed); 有符号(-128,127)
          + create table tablename(id tinyint unsigned not null default 0);
-   2. 浮点类型
+   2. 小数类型
+      + float(M,D)
+         + M表示显示长度，D表示小数位数
+         + float(4,2) 表示的范围：-99.99~99.99
+         + float(4,2) unsigned 表示的范围：0~99.99
+         + 插入时遵循四舍五入原则,超出范围会报错
+         + 精确度在小数点7位，单精度类型
+      + decimal(M,D)
+         + 用法和float一样
+         + 区别：
+            1. decimal的精度高于float,float存在一定误差
+            2. decimal以字符串的形式存储
    3. zerofill
 
      create table tablename(
-         num1 int,
+         num1 int auto_increment,
          num2 int(4) zerofill, comment '不足4位，前面自动以0填充,超过则不填充'
-         num3 int(6) unsigned zerofill '不足6位，前面自动以0填充,超过则不填充'
+         num3 int(6) unsigned zerofill '不足6位，前面自动以0填充,超过则不填充',
+         primary key(num1),
      );
      注意事项：1. zerofill只能和unsigned配合使用
               2. 如果指定了 zerofill，则默认是unsigned
+              3. 如果不使用zerofill关键字，则int(11)没有任何意义
+    4. primary key
+       + alter table tablename add primary key(id); 添加主键
+       + alter table tablename drop primary key; 删除主键
+    5. BIT使用
+    6. ASCII码
 ### 字符串类型
-   + 字符串类型指CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM和SET。
-### 日期
-### 
+   1. char
+      + 固定长度字符串，最大255字符
+      + 一个英文字符和一个中文字符的长度都是一个字符
+      + char(n) 是定长，即使插入n-2个字符，也会分配n个字符
+      + char在存放空格时会丢失，'aaa ' => 'aaa'
+   2. varchar
+      + varchar(2) 等同于 char(2)
+      + 最大长度可以存放65535个字节，其中1-3个字节用于记录数据大小
+      + varchar(n) n的最大值和字符编码有关系,utf8中一个汉字占3个字节，
+        gbk中一个汉字占2个字节
+        varchar(65532/3) utf8编码，最大存放字符数 65532/3
+        varchar(65532/2) gbk编码，最大存放字符数 65532/2
+      + varchar(n) 是变长，只保存实际需要的字符数，另加一个字节记录长度，
+        如果列声明的长度超过255，则使用两个字节记录长度
+      + varchar不会丢失空格 'aaa ' => 'aaa '
+   3. text
+      + 用法和varchar一样
+      + text 不能指定默认值
+### 日期类型
+   1. date
+   2. datetime
+   3. timestamp: 会自动联动insert、update的时间戳
+   ```
+   create table tbname (n1 date,n2 datetime,n3 timestamp);
+   insert into tbname(n1,n2) values('2019-01-01','2019-01-01 00:12:12')
+   ```
+### Enum & SET
+   + Enum(enumeration) & SET 不能有默认值
+   + 复选框，单选框适用于 enum和 set数据类型
+   + 实际存储的是索引值，所以insert时可以用1,2,3替代
+   ```
+   create table votes(
+       username varchar(20) not null default '',
+       hobby set('篮球','足球','排球') not null,
+       sex enum('男','女') not null
+   );
+   insert into votes values('zhangsan','篮球，足球','女');
+   注意事项：1. set的值必须在可选范围内
+            2. enum只能支持单选
+    select * from votes where find_in_set('nba',hobby);
+   ```
+
 
 ## sql基本操作
 ### 库操作
@@ -136,6 +193,59 @@
    2. show tables; 查看所有表
    3. desc tablename; 查看表结构
    4. drop table tablename; 删除表
+   5. alter table tablename add filedname tinyint(6) zerofill; 添加字段
+   6. alter table tablename add primary key(id); 添加主键
+   7. alter table tablename drop primary key; 删除主键
+   8. 修改表名
+      + rename table tbname1 to tbname2;
+      + alter table tbname1 rename to tbname2;
+
+#### 修改表
+   1. 添加字段
+      + alter table tbname add filedname varchar(20) after fdname;
+   2. 修改字段
+      + 修改字段名属性一定要带上列类型
+      + alter table tbname modify fdname varchar(40); 修改属性
+      + alter table tbname change fdname fd_name varchar(40) not null default ''; 
+      修改字段名
+   3. 删除字段
+      + alter table tbname drop fdname;
+   4.  修改表名
+      + rename table tbname1 to tbname2;
+      + alter table tbname1 rename to tbname2;
+   5. 修改表字符集
+      + alter table tbname charset=utf8;
+   6. 修改存储引擎
+      + alter table tbname engine=innodb;
+   7. create table tbname1 select * from tbname2;
+#### insert语句
+   1. insert into tbname(fd1,fd2) values(val1,val2);
+   2. insert into tbname values(val1,val2,...);
+   3. insert into tbname values('2019-01-23','abc',11,...);
+   4. insert into tbname (val1,val2),(val1,val2),...;
+#### update语句
+   1. update tbname set fdname=val where id=1;
+   2. update tbname set fnname=val;
+   3. update tbname set salary=salary+500;
+   4. update tbname set salary=salary+500,name='php' where name = 'js';
+#### delete语句
+   1. delete from tbname where fdname='php';删除一条记录
+   2. delete from tbname;删除整个表的记录，但表结构还在
+   3. truncade table tbname;删除整个表的记录
+      + truncate 效率更快，不能带where条件，返回值为0
+      + delete可以带where条件，返回删除的记录数
+#### select语句
+   1. select * from tbname; 尽量少使用*,需要哪个字段就查哪个字段
+   2. select fdname1,fdname2 from tbname;
+   3. select distinct fdname1,fdname2 from tbname;去重
+   4. select fdname as newfdname from tbname;
+   5. select fdname from tbname order by fdname;
+   6. select round(fdname,2) as new fdname2 from tbname;保留两位小数
+   7. select fdname from tbname where fdname like '%s%';模糊查找
+   8. select * from tbname where fdname1>val and fdname2 like 'css%';
+   9. select * from tbname where not(fdname=val);
+   10. select * from tbname where fdname between val1 and val2;
+   11. select * from tbname order by fdname asc|desc;asc升序 desc绛序，支持别名排序
 ### 其他
    1. select now();查看当前时间 
    2. show character set; 查看所有字符集
