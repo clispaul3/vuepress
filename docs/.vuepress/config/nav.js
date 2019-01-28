@@ -11,6 +11,10 @@ const nav = [
                 text:'php',
                 link:'/php/基本语法'
             },
+            {
+                text:'java',
+                link:'/java/基本介绍'
+            }
         ]
     },{
         text:'工具',

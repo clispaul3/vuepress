@@ -12,7 +12,12 @@ const sidebar = {
         'phpmyadmin',
         'mvc',
         '常用函数',
-        'ThinkPHP'
+        '常用框架',
+        '路由'
+    ],
+    '/java/':[
+        '基本介绍',
+        '基本语法'
     ],
     '/markdown/':[
         '基本语法'

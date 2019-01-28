@@ -246,7 +246,26 @@
    9. select * from tbname where not(fdname=val);
    10. select * from tbname where fdname between val1 and val2;
    11. select * from tbname order by fdname asc|desc;asc升序 desc绛序，支持别名排序
-### 其他
+   12. 统计 sum & count & avg & max & min
+      + select count(*) from tbname where fdname=val;统计行数
+      + select count(fdname) from tbname where fdname=val;
+      + count(fdname)不会统计值为null的情况
+      + select sum(fdname) from tbname;自动求和
+      + select sum(fdname) from tbname where condition;
+      + select sum(fdname1+fdname2) from tbname;
+      + select sum(fdname1),sum(fdname2) from tbname;
+      + select sum(fdname)/count(fdname) from tbname;
+      + sum只对数值类型有用
+      + select avg(fdname) from tbname; 求平均数
+      + select avg(fdname1),avg(fdname2) from tbname; 
+   13. having vs where
+      + select fdname from tbname having fdname>val;
+      + select fdname as newfdname from tbname having newfdname>val;
+   14. group by
+      + select sum(math),fdname from tbname group by fdname;
+      + select count(*),fdname1,fdname2 from tbname group by fdname1,fdname2;
+   15. 日期函数
+ ### 其他
    1. select now();查看当前时间 
    2. show character set; 查看所有字符集
    3. show collation; 查看所有校对规则
