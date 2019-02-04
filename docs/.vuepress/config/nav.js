@@ -35,6 +35,9 @@ const nav = [
             },{
                 text:'Linux',
                 link:'/Linux/'
+            },{
+                text:'XML',
+                link:'/XML/'
             }
         ]
     },{
