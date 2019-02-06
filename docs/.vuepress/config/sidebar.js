@@ -30,7 +30,8 @@ const sidebar = {
         '泛型',
         'Tomcat',
         'JSP',
-        'Servlet'
+        'Servlet',
+        'JDBC'
     ],
     '/markdown/':[
         '基本语法'
