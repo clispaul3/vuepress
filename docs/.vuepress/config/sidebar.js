@@ -31,7 +31,9 @@ const sidebar = {
         'Tomcat',
         'JSP',
         'Servlet',
-        'JDBC'
+        'JDBC',
+        'IO流',
+        'Socket'
     ],
     '/markdown/':[
         '基本语法'

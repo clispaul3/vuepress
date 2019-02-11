@@ -9,10 +9,6 @@ actionLink: /javascript/
 
 features:
 
-- title: 前后端技术栈
-
-  details: javascript + php
-
 - title: javascript技术栈
 
   details: webpack + vue + react + electron 
@@ -20,6 +16,9 @@ features:
 - title: php技术栈
 
   details: linux + mysql + php + phpmyadmin + thinkphp
+- title: java技术栈
 
-footer: Copyright © 2019-present Yangbin Zhang 253626232@qq.com
+  details: javaSE + javaWeb
+
+footer: Copyright © 2018-present Yangbin Zhang 253626232@qq.com
 ---
