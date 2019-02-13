@@ -86,3 +86,51 @@
         </servlet-mapping>
       ```
    2. 浏览器访问Servlet路径
+## 生命周期
+   1. init()
+   2. service()
+   3. doGet()
+   4. doPost()
+   5. destroy()
+   ```
+   1. service()可以处理post/get请求，如果Servlet中有service方法，会优先调用
+   2. doGet()只能处理get请求
+   3. doPost()只能处理post请求
+   ```
+## 常见错误
+   1. 404错误：未找到资源
+   2. 405错误：请求方法不对
+   3. 500错误：未完成请求，服务器遇到意外情况
+## HttpServletRequest
+   `req对象是由Tomcat服务器创建的`
+   1. 请求头(和浏览器相关)
+      + 请求方式：String method = req.getMethod();
+      + 请求URL：StringBuffer requrl = req.getRequestURL();
+      + 获取URI：String uri = req.getRequstURI();
+      + 头信息: 
+         + String header = req.getHeader(String name);
+         + 遍历
+         ```
+          Enumeration enumeration = req.getHeaderNames();
+		  while(enumeration.hasMoreElements()) {
+			  String value = req.getHeader((String) enumeration.nextElement());
+			  System.out.println(enumeration.nextElement() + "=" + value);
+		  }
+         ```
+      + 获取协议: String scheme = req.getScheme();
+   2. 请求参数
+      + String username = req.getParamater("username"); => 不能获取复选框的值，会漏值
+      + String queryString = req.getQueryString();
+      + String[] favs = req.getParameterValues("fav"); => 获取复选框的值
+      + 遍历请求参数
+      ```
+          Enumeration enumeration = req.getPramaterNames();
+		  while(enumeration.hasMoreElements()) {
+			  String value = req.getParamater((String) enumeration.nextElement());
+			  System.out.println(enumeration.nextElement() + "=" + value);
+		  }
+      ```
+## HttpServletResponse
+   `resp对象是由Tomcat服务器创建的`
+   1. 设置响应头
+   2. 设置响应体
