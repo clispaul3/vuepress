@@ -14,6 +14,10 @@ const nav = [
             {
                 text:'java',
                 link:'/java/基本介绍'
+            },
+            {
+                text:'NodeJs',
+                link:'/NodeJs/基本介绍'
             }
         ]
     },{

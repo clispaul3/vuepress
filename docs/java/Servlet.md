@@ -118,6 +118,7 @@
 		  }
          ```
       + 获取协议: String scheme = req.getScheme();
+      + 设置请求编码格式：req.setCharaterEncoding("utf-8");
    2. 请求参数
       + String username = req.getParamater("username"); => 不能获取复选框的值，会漏值
       + String queryString = req.getQueryString();
@@ -133,4 +134,141 @@
 ## HttpServletResponse
    `resp对象是由Tomcat服务器创建的`
    1. 设置响应头
+      + resp.setHeader(String key,String value); 同键名会被覆盖
+      + resp.addHeader(String key,String value); 同键名不会被覆盖
+      + 设置状态码：resp.sendError(int number,String message)
+      + 设置响应编码格式：
+         + resp.setHeader("Content-type","text/html;chatset-utf-8");
+         + resp.setContentType("text/html;chatset-utf-8")
    2. 设置响应体
+      + resp.getWriter().writer()
+## 网页重定向
+   1. resp.sendRedirect("http://www.baidu.com")
+   2. 
+   ```
+      response.setContentType("text/html;charset=UTF-8");
+      String site = new String("http://www.runoob.com");
+      response.setStatus(response.SC_MOVED_TEMPORARILY);
+      response.setHeader("Location", site);   
+   ```
+## 请求转发
+   ```
+      // AServlet分发至BServlet处理请求
+      req.getRequestDispatch("/BServlet").forward(req,resp);
+   ```
+## cookie
+   1. 解决不同请求之间数据共享的问题
+   2. 读取cookie
+   ```
+    Cookie[] cookies = req.getCookies();
+    for(Cookie cookie:cookies) {
+		if(cookie.getName()!=null) {
+			System.out.println(cookie.getName()); // 获取键名
+			System.out.println(cookie.getValue()); // 获取值
+		}
+		System.err.println(cookie);
+	}
+   ```
+   3. 设置cookie
+   ```
+    Cookie cookie = new Cookie("username", "java-cookie");
+	cookie.setMaxAge(60); // 60s，如果不设置有效期，浏览器关闭之后cookie会失效
+	cookie.setPath("/studyweb/AServlet"); // 设置可访问目录，如果不设置，默认是根目录
+	resp.addCookie(cookie);
+   ```
+## session
+   1. 介绍
+   ```
+   在WEB开发中，服务器可以为每个用户浏览器创建一个会话对象（session对象），注意：一个浏览器独占一个session对象(默认情况下)。因此，在需要保存用户数据时，服务器程序可以把用户数据写到用户浏览器独占的session中，当用户使用浏览器访问其它程序时，其它程序可以从用户的session中取出该用户的数据，为用户服务。
+   ```
+   + 一个客户端对应一个session对象
+   + session ID通过cookie携带给服务器
+   2. 实现逻辑
+   ```
+   服务器创建session出来后，会把session的id号，以cookie的形式回写给客户机，这样，只要客户机的浏览器不关，再去访问服务器时，都会带着session的id号去，服务器发现客户机浏览器带session id过来了，就会使用内存中与之对应的session为之服务
+   ```
+   3. session对象
+      + 读取或创建对象：HTTPSession session = req.getSession(); // 有就读取，无就创建
+      + 存数据：session.setAttribute(String key,Object value);
+      + 读数据：session.getAttribute(String key);
+      + 删数据: session.removeAttribute(String key);
+      + 获取ID: session.getId();
+      + 判断是否是新创建的: session.isNew();
+      + 销毁session对象: session.invalidate();
+   4. 有效期
+      + 默认是30分钟
+      + 关闭浏览器即失效
+      + 通过web.xml配置
+      ```
+      // 以分钟为单位
+      <session-config>
+          <session-timeout>10</session-timeout>
+      </session-config>
+      ```
+## ServletContext对象
+   + 介绍
+   ```
+   ServletContext官方叫servlet上下文。服务器会为每一个工程创建一个对象，这个对象就是ServletContext对象。这个对象全局唯一，而且工程内部的所有servlet都共享这个对象。所以叫全局应用程序共享对象。
+   ```
+   + 作用
+      1. 解决不同用户之间的数据共享问题
+      2. 是一个域对象
+      3. 可以读取全局配置参数
+      4. 可以搜索当前工程目录下的资源文件
+      5. 可以获取工程名字
+   + 域对象
+      + 概念 `域对象是服务器在内存上创建的存储空间，用于在不同动态资源（servlet）之间传递与共享数据`
+      + 方法
+         + setAttribute(String key,Object value);
+         + getAttribute(String key);
+         + removeAttribute(String key);
+   + 获取servletContext对象
+      1. ServletContext obj = this.getServletContext();
+      2. ServletContext obj = this.getServletConfig().getServletContext();
+      3. ServletContext obj = getServletContext();
+   + 读取全局配置参数
+      + web.xml配置全局参数  
+      ``` 
+        <context-param>
+          <param-name>key1</param-name>
+          <param-value>value1</param-value>
+        </context-param>
+        <context-param>
+          <param-name>key2</param-name>
+          <param-value>value2</param-value>
+        </context-param>
+
+      ```
+      + 读取全局配置参数
+         1. getServletContext().getInitParameter(String key); // 获取指定键名的值
+         2. getServletContext().getInitParameterNames(); //获取所有键名列表
+   + 获取资源的绝对路径  
+   `String path = getServletContext().getRealPath("/index.jsp");` // "/"代表webContent目录
+## servletConfig对象
+   + 介绍: 和当前Servlet相关的配置信息
+   + web.xml中配置
+   ```
+   <servlet>
+    <servlet-name>servlet</servlet-name>
+    <servlet-class>cn.zyb.servlet.AServlet</servlet-class>
+    <init-param>
+       <param-name></param-name>
+       <param-value></param-value>
+    </init-param>
+   </servlet>
+   ```
+   + 获取ServletConfig对象
+      + ServletConfig config = this.getServletConfig();
+      + ServletConfig config = getServletConfig();
+   + 常用方法
+      1. getServletName(); // 获得servlet的名字
+      2. getInitParameter(String key); // 获得指定键名的值
+      3. getInitParameterNames(); // 获得所有键名组成的数组
+## web.xml
+   + 内容(核心组件)
+      1. 全局上下文配置
+      2. Servlet配置
+      3. 过滤器配置
+      4. 监听器配置
+   + 加载顺序：ServletContext -> context-param -> listener -> filter -> servlet
+       
