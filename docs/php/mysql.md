@@ -270,3 +270,9 @@
    2. show character set; 查看所有字符集
    3. show collation; 查看所有校对规则
    4. show create database dbname; 查看创建数据库时的sql语句
+## brew
+   1. 安装：brew install mysql
+   2. 启动：mysql.server start
+   3. 登陆：mysql -uroot -p
+   4. 退出：exit
+   5. 关闭：mysql.server stop
