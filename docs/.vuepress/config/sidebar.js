@@ -2,7 +2,8 @@ const sidebar = {
     '/javascript/':[
         'apply-call-bind',
         'es6',
-        '代码规范'
+        '代码规范',
+        'typescript'
     ],
     '/NodeJs/':[
         '基本介绍',
@@ -19,7 +20,12 @@ const sidebar = {
         '常用函数',
         '常用框架',
         '路由',
-        '数组'
+        '数组',
+        '请求参数',
+        '超级全局变量',
+        '会话控制',
+        'PSR规范',
+        '文件包含'
     ],
     '/java/':[
         '基本介绍',

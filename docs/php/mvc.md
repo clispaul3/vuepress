@@ -1,6 +1,8 @@
 # MVC
 ### 基本概念
-   + model view controller
+   + model view controller  
+   
+   ![MVC](/img/php-mvc.webp)
 ### psr规范
    + [规范文档](https://www.jianshu.com/p/b33155c15343)
    + psr1: 基础编码规范
