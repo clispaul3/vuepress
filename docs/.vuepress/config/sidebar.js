@@ -18,7 +18,7 @@ const sidebar = {
         'phpmyadmin',
         'mvc',
         '常用函数',
-        '常用框架',
+        'ThinkPHP',
         '路由',
         '数组',
         '请求参数',
