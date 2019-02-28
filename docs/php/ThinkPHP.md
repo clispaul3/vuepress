@@ -24,6 +24,8 @@
    + 驱动
    + 行为
    + 命名空间
+## 开发规范
+
 ## 请求
 + 获取请求对象
 ```php
@@ -209,6 +211,10 @@
     $res = Db::execute($sql);
     dump($res);
    ```
+## 查询构造器
+## think命令行
+   + 创建控制器：php think make:controller index/Artice [--plain](不带参数默认创建资源控制
+    器)
    
 
 

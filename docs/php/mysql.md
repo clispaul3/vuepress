@@ -45,8 +45,66 @@
    + 字符编码是计算机针对各种符号，在计算机中的一种二进制存储代号
    + 字符集是多个字符的集合，字符集种类较多，每个字符集包含的字符个数不同
    + 常见字符集 ASCII、GB2312、BIG5、GB18030、Unicode
+## 数据属性
+   1. **auto_increment**
+      + auto_increment能为新插入的行赋一个唯一的整数标识符。为列赋此属性将为每个新插入的行 
+        赋值为上一次插入的ID+1
+      + MySQL要求将auto_increment属性用于作为主键的列
+      + 每个表只允许有一个auto_increment列
+      + insert语句插入auto_increment列时，赋值为null
+   ```sql
+    // user表有两个字段，id、name;
+    insert into user values(null,'php');
+   ```
+   2. **binary**
+      + binary属性只用于char和varchar值
+      + 列指定了binary属性时，将区分大小写排序
+      + 列忽略了binary属性时，将不区分大小写排序
+   3. **default**
+      + default属性确保在没有任何值可用的情况下，赋予某个常量值，这个值必须是常量，因为
+        MySQL不允许插入函数或表达式值
+      + default无法用于Blob和Text列
+   4. **index** 
+      + 使用索引为一个列建立一个有序的键数组，可以极大提升数据库性能，每个键指向其相应的表行
+      + 尽量通过更少的字符建立索引
+      ```sql
+      // 创建表时指定索引列
+      create table employees
+      (
+        id varchar(9) not null,
+        firstname varchar(15) not null,
+        lastname varchar(25) not null,
+        email varchar(45) not null,
+        phone varchar(10) not null,
+        index lastname(lastname),
+        primary key(id)
+      );
+      // 修改字段属性指定索引
+      create index lastname on employees (lastname(7)); // 通过前7个字符指定索引
+      ```
+   5. **not null**
+      + 不允许向该列插入null值
+   6. **null**
+      + null表示无，并不是表示''或0
+   7. **primary key**
+      + primary key属性用于确保指定行的唯一性。指定为主键的列中，值不能重复，也不能为空
+      + primary key 和 auto_increment一般指定为同一列
+   8. **unique**
+      + unique指定的列不能有重复值，null值可以重复
+   9. **zerofill**
+      + zerofill属性可用于任何数值类型，用0填充所有剩余字段空间
+      + 一般用于数值类型
 ## 数据类型
-   [文档](https://www.cnblogs.com/Caveolae/p/7058890.html '数据类型')  
+   [文档](https://www.jb51.net/article/55853.htm '数据类型') 
+   1. **时间数据类型**  
+
+   mysql数据类型|含义  
+   |-|:-|   
+   date|格式：2019-02-23  
+   time|格式：08:40:40   
+   datetime|格式: 2019-02-23 08:40:40   
+   timestap|自动存储记录修改的时间戳，精确到秒   
+   year|格式：2019  
 ### 数值类型 
    1. 整数类型 
 
@@ -89,6 +147,7 @@
       + 一个英文字符和一个中文字符的长度都是一个字符
       + char(n) 是定长，即使插入n-2个字符，也会分配n个字符
       + char在存放空格时会丢失，'aaa ' => 'aaa'
+      + 超过char的n设置后，字符串会被截断
    2. varchar
       + varchar(2) 等同于 char(2)
       + 最大长度可以存放65535个字节，其中1-3个字节用于记录数据大小
@@ -99,6 +158,7 @@
       + varchar(n) 是变长，只保存实际需要的字符数，另加一个字节记录长度，
         如果列声明的长度超过255，则使用两个字节记录长度
       + varchar不会丢失空格 'aaa ' => 'aaa '
+      + 超过varchar的n设置后，字符串会被截断
    3. text
       + 用法和varchar一样
       + text 不能指定默认值
