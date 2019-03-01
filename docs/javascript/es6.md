@@ -5,7 +5,7 @@
    + new Set(params) params可选，且必须是array 
    + Set实例的本质是一个数组，可以调用数组的方法  
    + Set方法最大的方便就是可以去重基本数据类型组成的数组
-```
+```javascript
 const arr = new Set([1,2,3,4,5,1,2])
 console.log(arr) // => [1,2,3,4,5]
 const friends = new Set([
@@ -39,7 +39,7 @@ console.log(friends.length) // => 4 引用数据类型无法去重
   ```
 ## async/await
    + async 
-```
+```javascript
 async function fn1(){
     return 'res'
 }
@@ -50,7 +50,7 @@ result.then(arg=>{
 总结：1. async修饰的函数，返回值会被包装成一个Promise对象
      2. async修饰函数，相当于 return new Promise((resolve,reject)=>{}) 的语法糖
 ```
-```
+```javascript
 async function fn1(){
     return 'fn1'
 }
@@ -81,7 +81,7 @@ result.then(res=>{
 执行结果:fn1->fn2->fn3
 ```
    + await
-```
+```javascript
 function fn2(){
     return new Promise((resolve,reject)=>{
         setTimeout(()=>{

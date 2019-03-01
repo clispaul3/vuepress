@@ -1,9 +1,16 @@
 const sidebar = {
     '/javascript/':[
-        'apply-call-bind',
+        '改变this指向',
         'es6',
         '代码规范',
-        'typescript'
+        'typescript',
+        'JS性能优化',
+        '类型检查',
+        '函数节流',
+        '浏览器缓存',
+        '数组API',
+        '拷贝',
+        'chameleon'
     ],
     '/NodeJs/':[
         '基本介绍',

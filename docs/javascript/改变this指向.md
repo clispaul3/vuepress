@@ -1,4 +1,4 @@
-# apply & call & bind
+# 改变this指向
    + 相同点 
       + 用于改变this指向
       + 第一个参数都是this要指向的对象
@@ -9,7 +9,7 @@
    + 不同点
       + bind 是返回对应函数，便于稍后调用；apply 、call 则是立即调用
       + apply的第二个参数是一个数组
-```
+```javascript
 function say(params){
     console.log(params)
 }
