@@ -22,6 +22,7 @@
       - 服务器应用
       - 嵌入式系统
 ## VM安装
+   + 开发环境：虚拟机 + 操作系统镜像文件 =>  virtual machine + CentOS
 ## 常用命令
    + ifconfig 查看网卡配置信息
    + ping www.baidu.com 检查网络是否连接
