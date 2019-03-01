@@ -10,7 +10,10 @@ const sidebar = {
         '浏览器缓存',
         '数组API',
         '拷贝',
-        'chameleon'
+        'chameleon',
+        'uniapp',
+        'babel',
+        'Flutter'
     ],
     '/NodeJs/':[
         '基本介绍',
