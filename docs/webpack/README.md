@@ -243,6 +243,50 @@
       use:['style-loader','css-loader','sass-loader']
     }
     ```
+  + <span style="color:#e96900;font-weight:blod;font-size:20px;">样式相关的插件</span>
+  + <span style="color:red;font-size:18px;">mini-css-extract-plugin</span>: 将 css 文件单独抽离出来，不混合在 js 模块中，并通过 link 标签自动插入到 html 文件中
+  + 在多页应用中，每个 html 文件引入哪个样式文件取决于 html-webpack-plugin 中的 chunks 的配置
+  + 配置
+  ```javascript
+  const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+  new MiniCssExtractPlugin({
+      filename:'[name].css' // 这里的 [name] 对应的是 打包后的 js 模块的名字
+  })
+  {
+      test:/.css$|.scss/,
+      use:[
+            {
+              loader:MiniCssExtractPlugin.loader,
+            },
+            'css-loader',
+            'sass-loader'
+      ]
+  }
+  ```
+  + <span style="color:red;font-size:18px;">postcss-loader</span>：自动添加浏览器前缀，只能添加 -webkit- 前缀
+  + npm install postcss-loader autoprefixer
+  + 配置
+  ```javascript
+  {
+      test:/.css$|.scss/,
+      use:[
+            {
+                loader:MiniCssExtractPlugin.loader,
+            },
+            'css-loader',
+            'sass-loader',
+            {
+                loader:'postcss-loader',  // postcss-loader 必须放在最开始解析的位置，最下面或最右边
+                options:{
+                    plugins:[
+                        require('autoprefixer')
+                    ]
+                }
+            }
+      ]
+  }
+  ```
+
 ## 图片loader
 ## plugin
   + 插件的目的在于解决 loader 无法实现的其他事
