@@ -4,3 +4,6 @@
 ## MAC环境配置
    + 下载flutter SDK:
       [下载](https://flutter.dev/docs/get-started/install/macos)
+## win环境配置
+   + 下载SDK
+   + 配置环境变量

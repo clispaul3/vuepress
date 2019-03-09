@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>PSR规范 | 50号公路的技术博客</title>
+    <meta name="description" content="每一行代码都是你成长的记录">
+    <link rel="icon" href="/img/avatar.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.520ee453.css" as="style"><link rel="preload" href="/assets/js/app.9420e4cb.js" as="script"><link rel="preload" href="/assets/js/49.4150bf0f.js" as="script"><link rel="prefetch" href="/assets/js/10.81a86c04.js"><link rel="prefetch" href="/assets/js/11.ab6c01ae.js"><link rel="prefetch" href="/assets/js/12.a36b9e97.js"><link rel="prefetch" href="/assets/js/13.c7b7b6b3.js"><link rel="prefetch" href="/assets/js/14.38b1927e.js"><link rel="prefetch" href="/assets/js/15.a64154bc.js"><link rel="prefetch" href="/assets/js/16.1bb59aea.js"><link rel="prefetch" href="/assets/js/17.ba893253.js"><link rel="prefetch" href="/assets/js/18.b7821a2f.js"><link rel="prefetch" href="/assets/js/19.86c1c338.js"><link rel="prefetch" href="/assets/js/2.8e16ab96.js"><link rel="prefetch" href="/assets/js/20.6c5916d1.js"><link rel="prefetch" href="/assets/js/21.26e255a7.js"><link rel="prefetch" href="/assets/js/22.59533cc9.js"><link rel="prefetch" href="/assets/js/23.7d8d7234.js"><link rel="prefetch" href="/assets/js/24.cdd99251.js"><link rel="prefetch" href="/assets/js/25.f7d388c6.js"><link rel="prefetch" href="/assets/js/26.b7c87df0.js"><link rel="prefetch" href="/assets/js/27.259f66dc.js"><link rel="prefetch" href="/assets/js/28.84756655.js"><link rel="prefetch" href="/assets/js/29.3cf81014.js"><link rel="prefetch" href="/assets/js/3.ae172d09.js"><link rel="prefetch" href="/assets/js/30.333dac80.js"><link rel="prefetch" href="/assets/js/31.d06dc3fa.js"><link rel="prefetch" href="/assets/js/32.cd7bb5a4.js"><link rel="prefetch" href="/assets/js/33.515226d3.js"><link rel="prefetch" href="/assets/js/34.71a9c6df.js"><link rel="prefetch" href="/assets/js/35.9ec7f7e1.js"><link rel="prefetch" href="/assets/js/36.bd506d1a.js"><link rel="prefetch" href="/assets/js/37.25d4abac.js"><link rel="prefetch" href="/assets/js/38.a66ed17a.js"><link rel="prefetch" href="/assets/js/39.8e64d259.js"><link rel="prefetch" href="/assets/js/4.501ed829.js"><link rel="prefetch" href="/assets/js/40.22e314ce.js"><link rel="prefetch" href="/assets/js/41.8709c953.js"><link rel="prefetch" href="/assets/js/42.20daadd1.js"><link rel="prefetch" href="/assets/js/43.b0de3f07.js"><link rel="prefetch" href="/assets/js/44.f5c1f11e.js"><link rel="prefetch" href="/assets/js/45.a72db8ae.js"><link rel="prefetch" href="/assets/js/46.b8d1387c.js"><link rel="prefetch" href="/assets/js/47.5ea91520.js"><link rel="prefetch" href="/assets/js/48.8054b532.js"><link rel="prefetch" href="/assets/js/5.a2435b33.js"><link rel="prefetch" href="/assets/js/50.e5b45c00.js"><link rel="prefetch" href="/assets/js/51.d6f2382d.js"><link rel="prefetch" href="/assets/js/52.98347606.js"><link rel="prefetch" href="/assets/js/53.6ed49a25.js"><link rel="prefetch" href="/assets/js/54.c251955f.js"><link rel="prefetch" href="/assets/js/55.7d68d799.js"><link rel="prefetch" href="/assets/js/56.82f261cb.js"><link rel="prefetch" href="/assets/js/57.89da38c3.js"><link rel="prefetch" href="/assets/js/58.bdb26a70.js"><link rel="prefetch" href="/assets/js/59.bdbab2fc.js"><link rel="prefetch" href="/assets/js/6.42395ef8.js"><link rel="prefetch" href="/assets/js/60.92785b59.js"><link rel="prefetch" href="/assets/js/61.74a6aa2b.js"><link rel="prefetch" href="/assets/js/62.b5ac69e1.js"><link rel="prefetch" href="/assets/js/63.c75cbd98.js"><link rel="prefetch" href="/assets/js/64.d6fb2cb7.js"><link rel="prefetch" href="/assets/js/65.5db012e3.js"><link rel="prefetch" href="/assets/js/66.397bb60d.js"><link rel="prefetch" href="/assets/js/67.2b101eef.js"><link rel="prefetch" href="/assets/js/68.02a7c5a3.js"><link rel="prefetch" href="/assets/js/69.3e862fce.js"><link rel="prefetch" href="/assets/js/7.11a450ee.js"><link rel="prefetch" href="/assets/js/70.739f0920.js"><link rel="prefetch" href="/assets/js/71.8fdd9eeb.js"><link rel="prefetch" href="/assets/js/8.8643eeca.js"><link rel="prefetch" href="/assets/js/9.ebaca138.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.520ee453.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">50号公路的技术博客</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">主页</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">编程语言</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/javascript/" class="nav-link">javascript</a></li><li class="dropdown-item"><!----> <a href="/php/基本语法.html" class="nav-link">php</a></li><li class="dropdown-item"><!----> <a href="/java/基本介绍.html" class="nav-link">java</a></li><li class="dropdown-item"><!----> <a href="/NodeJs/基本介绍.html" class="nav-link">NodeJs</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/markdown/基本语法.html" class="nav-link">markdown</a></li><li class="dropdown-item"><!----> <a href="/tooldocs/工具文档.html" class="nav-link">tooldocs</a></li><li class="dropdown-item"><!----> <a href="/webpack/" class="nav-link">webpack</a></li><li class="dropdown-item"><!----> <a href="/shell/" class="nav-link">shell</a></li><li class="dropdown-item"><!----> <a href="/Linux/" class="nav-link">Linux</a></li><li class="dropdown-item"><!----> <a href="/XML/" class="nav-link">XML</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">项目</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/project/reactChatPC.html" class="nav-link">react-chat</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vue/" class="nav-link">vue</a></li><li class="dropdown-item"><!----> <a href="/react/" class="nav-link">react</a></li><li class="dropdown-item"><!----> <a href="/electron/" class="nav-link">electron</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/clispaul3" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">主页</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">编程语言</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/javascript/" class="nav-link">javascript</a></li><li class="dropdown-item"><!----> <a href="/php/基本语法.html" class="nav-link">php</a></li><li class="dropdown-item"><!----> <a href="/java/基本介绍.html" class="nav-link">java</a></li><li class="dropdown-item"><!----> <a href="/NodeJs/基本介绍.html" class="nav-link">NodeJs</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/markdown/基本语法.html" class="nav-link">markdown</a></li><li class="dropdown-item"><!----> <a href="/tooldocs/工具文档.html" class="nav-link">tooldocs</a></li><li class="dropdown-item"><!----> <a href="/webpack/" class="nav-link">webpack</a></li><li class="dropdown-item"><!----> <a href="/shell/" class="nav-link">shell</a></li><li class="dropdown-item"><!----> <a href="/Linux/" class="nav-link">Linux</a></li><li class="dropdown-item"><!----> <a href="/XML/" class="nav-link">XML</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">项目</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/project/reactChatPC.html" class="nav-link">react-chat</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vue/" class="nav-link">vue</a></li><li class="dropdown-item"><!----> <a href="/react/" class="nav-link">react</a></li><li class="dropdown-item"><!----> <a href="/electron/" class="nav-link">electron</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/clispaul3" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/php/基本语法.html" class="sidebar-link">基本语法</a></li><li><a href="/php/面向对象.html" class="sidebar-link">面向对象</a></li><li><a href="/php/mysql.html" class="sidebar-link">MySQL</a></li><li><a href="/php/PDO.html" class="sidebar-link">PDO</a></li><li><a href="/php/phpmyadmin.html" class="sidebar-link">phpmyadmin</a></li><li><a href="/php/mvc.html" class="sidebar-link">MVC</a></li><li><a href="/php/常用函数.html" class="sidebar-link">常用函数</a></li><li><a href="/php/ThinkPHP.html" class="sidebar-link">ThinkPHP</a></li><li><a href="/php/路由.html" class="sidebar-link">路由</a></li><li><a href="/php/数组.html" class="sidebar-link">数组</a></li><li><a href="/php/请求参数.html" class="sidebar-link">请求参数</a></li><li><a href="/php/超级全局变量.html" class="sidebar-link">超级全局变量</a></li><li><a href="/php/会话控制.html" class="sidebar-link">会话控制</a></li><li><a href="/php/PSR规范.html" class="active sidebar-link">PSR规范</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/php/PSR规范.html#psr-1" class="sidebar-link">PSR-1</a></li><li class="sidebar-sub-header"><a href="/php/PSR规范.html#psr-2" class="sidebar-link">PSR-2</a></li><li class="sidebar-sub-header"><a href="/php/PSR规范.html#psr-3" class="sidebar-link">PSR-3</a></li><li class="sidebar-sub-header"><a href="/php/PSR规范.html#psr-4" class="sidebar-link">PSR-4</a></li></ul></li><li><a href="/php/文件包含.html" class="sidebar-link">文件包含</a></li><li><a href="/php/smart.html" class="sidebar-link">smart</a></li></ul> </div> <div class="page"> <div class="content"><h1 id="psr规范"><a href="#psr规范" aria-hidden="true" class="header-anchor">#</a> PSR规范</h1> <h2 id="psr-1"><a href="#psr-1" aria-hidden="true" class="header-anchor">#</a> PSR-1</h2> <ul><li><p>PHP标签：<br>
+PHP代码必须放在&lt;?php ?&gt;标签或&lt;?= ?&gt;标签中。</p></li> <li><p>编码：<br>
+PHP文件必须使用无BOM的UTF-8编码。</p></li> <li><p>副作用：<br>
+一个PHP文件可以定义符号（比如类、函数、常量等），或者执行只有唯一副作用的操作（比如输出结果、处理数据等），但是不能同时做这两件事，尽量是一个PHP文件的功能单一。在操作的时候尽量把变量、类、函数的声明分开，通过include或require文件的方式来使用。</p></li> <li><p>命名空间和类：<br>
+命名空间和类必须遵循PSR-4自动加载器标准。</p> <div class="language-php extra-class"><pre class="language-php"><code>  <span class="token keyword">namespace</span> <span class="token package">Vendor<span class="token punctuation">\</span>Model</span><span class="token punctuation">;</span>
+  <span class="token keyword">class</span> <span class="token class-name">Foo</span>
+  <span class="token punctuation">{</span>
+  <span class="token punctuation">}</span>
+</code></pre></div></li> <li><p>类的名称：<br>
+每个类都有自己的命名空间，且都在顶级命名空间下，类名必须使用大驼峰</p></li> <li><p>类的方法:<br>
+类的方法必须使用小字母开头的小驼峰命名</p></li> <li><p>常量：<br>
+常量必须全部是用大写，并且使用下划线（_）分开</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+  <span class="token keyword">namespace</span> <span class="token package">Vendor<span class="token punctuation">\</span>Model</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">class</span> <span class="token class-name">Foo</span>
+  <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> <span class="token constant">VERSION</span> <span class="token operator">=</span> <span class="token single-quoted-string string">'1.0'</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> <span class="token constant">DATE_APPROVED</span> <span class="token operator">=</span> <span class="token single-quoted-string string">'2012-06-01'</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></code></pre></div></li></ul> <h2 id="psr-2"><a href="#psr-2" aria-hidden="true" class="header-anchor">#</a> PSR-2</h2> <ul><li><p>PSR-2是对PSR-1的扩充</p></li> <li><p>文件和代码行:<br>
+PHP文件必须使用Unix风格的换行符（LF， linefeed），最后要有一个空行，仅包含PHP代码的文件而且不能使用PHP关闭标签<code>?&gt;</code>，每行代码不应该超过80个字符，每行末尾不能有空格，每行只能有一条语句，可以在适当的地方添加空行提高代码的阅读性。</p> <blockquote><p>不加上?&gt;关闭标签，可以避免意料之外的输出错误，如果加上关闭标签，且在关闭标签后有空行，那么空行会被当成输出，导致意想不到的错误。</p></blockquote></li> <li><p>缩进
+必须以4个空格为缩进，不能使用制表符（Tab键）缩进</p> <blockquote><p>必须以4个空格为缩进，不能使用制表符（Tab键）缩进</p></blockquote></li> <li><p>关键字：<br>
+PHP的关键字必须使用小写，而且true, false, 和 null也必须小写。</p></li> <li><p>命名空间和use声明：<br>
+现在，namespace声明之后必须要有一个空行，而且use声明必须放在namespace之后，必须分别使用use引入命名空间，而且use后要有空行</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+   <span class="token keyword">namespace</span> <span class="token package">Vendor<span class="token punctuation">\</span>Package</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">use</span> <span class="token package">FooClass</span><span class="token punctuation">;</span>
+   <span class="token keyword">use</span> <span class="token package">BarClass</span> <span class="token keyword">as</span> Bar<span class="token punctuation">;</span>
+   <span class="token keyword">use</span> <span class="token package">OtherVendor<span class="token punctuation">\</span>OtherPackage<span class="token punctuation">\</span>BazClass</span><span class="token punctuation">;</span>
+
+   <span class="token comment">// ... additional PHP code ...</span>
+</span></code></pre></div></li> <li><p>类的继承和实现:<br>
+extends和implements关键字必须和类名在同一行，类、接口和Traits定义体的起始括号应该在类名之后新起一行，结束括号也必须新起一行</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+   <span class="token keyword">namespace</span> <span class="token package">Vendor<span class="token punctuation">\</span>Package</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">use</span> <span class="token package">FooClass</span><span class="token punctuation">;</span>
+   <span class="token keyword">use</span> <span class="token package">BarClass</span> <span class="token keyword">as</span> Bar<span class="token punctuation">;</span>
+   <span class="token keyword">use</span> <span class="token package">OtherVendor<span class="token punctuation">\</span>OtherPackage<span class="token punctuation">\</span>BazClass</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">class</span> <span class="token class-name">ClassName</span> <span class="token keyword">extends</span> <span class="token class-name">ParentClass</span> <span class="token keyword">implements</span> <span class="token class-name"><span class="token punctuation">\</span>ArrayAccess</span><span class="token punctuation">,</span> \<span class="token package">Countable</span>
+   <span class="token punctuation">{</span>
+       <span class="token comment">// constants, properties, methods</span>
+   <span class="token punctuation">}</span>
+</span></code></pre></div><p>如果implements后面后很多类导致一行很长，可以依次将需要的类另起新行并缩进4个空格</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+   <span class="token keyword">namespace</span> <span class="token package">Vendor<span class="token punctuation">\</span>Package</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">use</span> <span class="token package">FooClass</span><span class="token punctuation">;</span>
+   <span class="token keyword">use</span> <span class="token package">BarClass</span> <span class="token keyword">as</span> Bar<span class="token punctuation">;</span>
+   <span class="token keyword">use</span> <span class="token package">OtherVendor<span class="token punctuation">\</span>OtherPackage<span class="token punctuation">\</span>BazClass</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">class</span> <span class="token class-name">ClassName</span> <span class="token keyword">extends</span> <span class="token class-name">ParentClass</span> <span class="token keyword">implements</span>
+       <span class="token class-name"><span class="token punctuation">\</span>ArrayAccess</span><span class="token punctuation">,</span>
+       \<span class="token package">Countable</span><span class="token punctuation">,</span>
+       \<span class="token package">Serializable</span>
+   <span class="token punctuation">{</span>
+       <span class="token comment">// constants, properties, methods</span>
+   <span class="token punctuation">}</span>
+</span></code></pre></div></li> <li><p>可见性：<br>
+类中的每个属性和方法都要声明可见性，有public、private和protected，不能使用var关键词来声明，老版本的PHP会在私有属性前加上_，一行只能声明一个属性，例如</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+   <span class="token keyword">namespace</span> <span class="token package">Vendor<span class="token punctuation">\</span>Package</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">class</span> <span class="token class-name">ClassName</span>
+   <span class="token punctuation">{</span>
+       <span class="token keyword">public</span> <span class="token variable">$foo</span> <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+</span></code></pre></div></li> <li><p>方法：<br>
+类中的所有方法也应该定义可见性，方法名后面不能有空格，方法体的括号位置和类定义体的括号位置一样，都要新起一行，结束括号也要新起一行。方法参数的起始圆括号之后没有空格，结束括号之前也没有空格，有多个参数是，每个参数的逗号后面加一个空格</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+   <span class="token keyword">namespace</span> <span class="token package">Vendor<span class="token punctuation">\</span>Package</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">class</span> <span class="token class-name">ClassName</span>
+   <span class="token punctuation">{</span>
+       <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">fooBarBaz</span><span class="token punctuation">(</span><span class="token variable">$arg1</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span><span class="token variable">$arg2</span><span class="token punctuation">,</span> <span class="token variable">$arg3</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+       <span class="token punctuation">{</span>
+           <span class="token comment">// method body</span>
+       <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+</span></code></pre></div><p>如果参数比较多，需要换行时，可以如下：</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+   <span class="token keyword">namespace</span> <span class="token package">Vendor<span class="token punctuation">\</span>Package</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">class</span> <span class="token class-name">ClassName</span>
+   <span class="token punctuation">{</span>
+       <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">aVeryLongMethodName</span><span class="token punctuation">(</span>
+           ClassTypeHint <span class="token variable">$arg1</span><span class="token punctuation">,</span>
+           <span class="token operator">&amp;</span><span class="token variable">$arg2</span><span class="token punctuation">,</span>
+           <span class="token keyword">array</span> <span class="token variable">$arg3</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+       <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+           <span class="token comment">// method body</span>
+       <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+</span></code></pre></div><p>abstract、final和static：
+现在，abstract、final必须在可见性修饰符之前，static声明必须放在可见性修饰符之后，例如：</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+   <span class="token keyword">namespace</span> <span class="token package">Vendor<span class="token punctuation">\</span>Package</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">ClassName</span>
+   <span class="token punctuation">{</span>
+       <span class="token keyword">protected</span> <span class="token keyword">static</span> <span class="token variable">$foo</span><span class="token punctuation">;</span>
+
+       <span class="token keyword">abstract</span> <span class="token keyword">protected</span> <span class="token keyword">function</span> <span class="token function">zim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token keyword">final</span> <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+       <span class="token punctuation">{</span>
+           <span class="token comment">// method body</span>
+       <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+</span></code></pre></div></li> <li><p>方法和函数的调用：<br>
+在调用方法和函数时，圆括号必须跟在函数名之后，函数的参数之间有一个空格:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+   <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token variable">$foo</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">bar</span><span class="token punctuation">(</span><span class="token variable">$arg1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   Foo<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">bar</span><span class="token punctuation">(</span><span class="token variable">$arg2</span><span class="token punctuation">,</span> <span class="token variable">$arg3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code></pre></div><p>如果参数比较多，一行放不下时，如下处理：</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+   <span class="token variable">$foo</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">bar</span><span class="token punctuation">(</span>
+       <span class="token variable">$longArgument</span><span class="token punctuation">,</span>
+       <span class="token variable">$longerArgument</span><span class="token punctuation">,</span>
+       <span class="token variable">$muchLongerArgument</span>
+   <span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code></pre></div></li> <li><p>控制结构:<br>
+PHP的控制结构包括if、else、elseif、switch、case、while、do while、for、foreach、try和catch。如果这些关键词后面有一对原括号，开始括号前必须有一个空格，与方法和类的定义体不同，控制结构关键词后面的起始括号应该和控制结构关键词写在同一行，例如：</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+   <span class="token variable">$gorilla</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token punctuation">\</span>Animals<span class="token punctuation">\</span>Gorilla</span><span class="token punctuation">;</span>
+   <span class="token variable">$ibis</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token punctuation">\</span>Animals<span class="token punctuation">\</span>StrawNeckedIbis</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$gorilla</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">isWake</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">do</span> <span class="token punctuation">{</span>
+           <span class="token variable">$gorilla</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">beatChest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token variable">$ibis</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">isAsleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       
+       <span class="token variable">$ibis</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">flyAway</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+</span></code></pre></div></li> <li><p>闭包函数：
+闭包函数在声明时，function关键词后必须有一个空格，同时use关键词前后也必须有一个空格。起始大括号不需要另起新行</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+   <span class="token variable">$closureWithArgs</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$arg1</span><span class="token punctuation">,</span> <span class="token variable">$arg2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token comment">// body</span>
+   <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+   <span class="token variable">$closureWithArgsAndVars</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$arg1</span><span class="token punctuation">,</span> <span class="token variable">$arg2</span><span class="token punctuation">)</span> <span class="token keyword">use</span> <span class="token punctuation">(</span><span class="token variable">$var1</span><span class="token punctuation">,</span> <span class="token variable">$var2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token comment">// body</span>
+   <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></code></pre></div><p>闭包函数有多个参数时，处理方式和方法的参数一样：</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+   <span class="token variable">$longArgs_noVars</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>
+       <span class="token variable">$longArgument</span><span class="token punctuation">,</span>
+       <span class="token variable">$longerArgument</span><span class="token punctuation">,</span>
+       <span class="token variable">$muchLongerArgument</span>
+   <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token comment">// body</span>
+   <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+   <span class="token variable">$noArgs_longVars</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">use</span> <span class="token punctuation">(</span>
+       <span class="token variable">$longVar1</span><span class="token punctuation">,</span>
+       <span class="token variable">$longerVar2</span><span class="token punctuation">,</span>
+       <span class="token variable">$muchLongerVar3</span>
+   <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token comment">// body</span>
+   <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+   <span class="token variable">$longArgs_longVars</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>
+       <span class="token variable">$longArgument</span><span class="token punctuation">,</span>
+       <span class="token variable">$longerArgument</span><span class="token punctuation">,</span>
+       <span class="token variable">$muchLongerArgument</span>
+   <span class="token punctuation">)</span> <span class="token keyword">use</span> <span class="token punctuation">(</span>
+       <span class="token variable">$longVar1</span><span class="token punctuation">,</span>
+       <span class="token variable">$longerVar2</span><span class="token punctuation">,</span>
+       <span class="token variable">$muchLongerVar3</span>
+   <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token comment">// body</span>
+   <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+   <span class="token variable">$longArgs_shortVars</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>
+       <span class="token variable">$longArgument</span><span class="token punctuation">,</span>
+       <span class="token variable">$longerArgument</span><span class="token punctuation">,</span>
+       <span class="token variable">$muchLongerArgument</span>
+   <span class="token punctuation">)</span> <span class="token keyword">use</span> <span class="token punctuation">(</span><span class="token variable">$var1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token comment">// body</span>
+   <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+   <span class="token variable">$shortArgs_longVars</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$arg</span><span class="token punctuation">)</span> <span class="token keyword">use</span> <span class="token punctuation">(</span>
+       <span class="token variable">$longVar1</span><span class="token punctuation">,</span>
+       <span class="token variable">$longerVar2</span><span class="token punctuation">,</span>
+       <span class="token variable">$muchLongerVar3</span>
+   <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token comment">// body</span>
+   <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></code></pre></div></li></ul> <h2 id="psr-3"><a href="#psr-3" aria-hidden="true" class="header-anchor">#</a> PSR-3</h2> <ul><li>PSR-3定义了一套通用的日志记录接口</li></ul> <h2 id="psr-4"><a href="#psr-4" aria-hidden="true" class="header-anchor">#</a> PSR-4</h2> <ul><li>PSR-4定义了一套自动加载器的规范</li></ul></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新: </span> <span class="time">2/21/2019, 4:35:46 PM</span></div></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.9420e4cb.js" defer></script><script src="/assets/js/49.4150bf0f.js" defer></script>
+  </body>
+</html>

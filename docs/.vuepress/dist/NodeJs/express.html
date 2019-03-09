@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>express框架 | 50号公路的技术博客</title>
+    <meta name="description" content="每一行代码都是你成长的记录">
+    <link rel="icon" href="/img/avatar.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.520ee453.css" as="style"><link rel="preload" href="/assets/js/app.9420e4cb.js" as="script"><link rel="preload" href="/assets/js/4.501ed829.js" as="script"><link rel="prefetch" href="/assets/js/10.81a86c04.js"><link rel="prefetch" href="/assets/js/11.ab6c01ae.js"><link rel="prefetch" href="/assets/js/12.a36b9e97.js"><link rel="prefetch" href="/assets/js/13.c7b7b6b3.js"><link rel="prefetch" href="/assets/js/14.38b1927e.js"><link rel="prefetch" href="/assets/js/15.a64154bc.js"><link rel="prefetch" href="/assets/js/16.1bb59aea.js"><link rel="prefetch" href="/assets/js/17.ba893253.js"><link rel="prefetch" href="/assets/js/18.b7821a2f.js"><link rel="prefetch" href="/assets/js/19.86c1c338.js"><link rel="prefetch" href="/assets/js/2.8e16ab96.js"><link rel="prefetch" href="/assets/js/20.6c5916d1.js"><link rel="prefetch" href="/assets/js/21.26e255a7.js"><link rel="prefetch" href="/assets/js/22.59533cc9.js"><link rel="prefetch" href="/assets/js/23.7d8d7234.js"><link rel="prefetch" href="/assets/js/24.cdd99251.js"><link rel="prefetch" href="/assets/js/25.f7d388c6.js"><link rel="prefetch" href="/assets/js/26.b7c87df0.js"><link rel="prefetch" href="/assets/js/27.259f66dc.js"><link rel="prefetch" href="/assets/js/28.84756655.js"><link rel="prefetch" href="/assets/js/29.3cf81014.js"><link rel="prefetch" href="/assets/js/3.ae172d09.js"><link rel="prefetch" href="/assets/js/30.333dac80.js"><link rel="prefetch" href="/assets/js/31.d06dc3fa.js"><link rel="prefetch" href="/assets/js/32.cd7bb5a4.js"><link rel="prefetch" href="/assets/js/33.515226d3.js"><link rel="prefetch" href="/assets/js/34.71a9c6df.js"><link rel="prefetch" href="/assets/js/35.9ec7f7e1.js"><link rel="prefetch" href="/assets/js/36.bd506d1a.js"><link rel="prefetch" href="/assets/js/37.25d4abac.js"><link rel="prefetch" href="/assets/js/38.a66ed17a.js"><link rel="prefetch" href="/assets/js/39.8e64d259.js"><link rel="prefetch" href="/assets/js/40.22e314ce.js"><link rel="prefetch" href="/assets/js/41.8709c953.js"><link rel="prefetch" href="/assets/js/42.20daadd1.js"><link rel="prefetch" href="/assets/js/43.b0de3f07.js"><link rel="prefetch" href="/assets/js/44.f5c1f11e.js"><link rel="prefetch" href="/assets/js/45.a72db8ae.js"><link rel="prefetch" href="/assets/js/46.b8d1387c.js"><link rel="prefetch" href="/assets/js/47.5ea91520.js"><link rel="prefetch" href="/assets/js/48.8054b532.js"><link rel="prefetch" href="/assets/js/49.4150bf0f.js"><link rel="prefetch" href="/assets/js/5.a2435b33.js"><link rel="prefetch" href="/assets/js/50.e5b45c00.js"><link rel="prefetch" href="/assets/js/51.d6f2382d.js"><link rel="prefetch" href="/assets/js/52.98347606.js"><link rel="prefetch" href="/assets/js/53.6ed49a25.js"><link rel="prefetch" href="/assets/js/54.c251955f.js"><link rel="prefetch" href="/assets/js/55.7d68d799.js"><link rel="prefetch" href="/assets/js/56.82f261cb.js"><link rel="prefetch" href="/assets/js/57.89da38c3.js"><link rel="prefetch" href="/assets/js/58.bdb26a70.js"><link rel="prefetch" href="/assets/js/59.bdbab2fc.js"><link rel="prefetch" href="/assets/js/6.42395ef8.js"><link rel="prefetch" href="/assets/js/60.92785b59.js"><link rel="prefetch" href="/assets/js/61.74a6aa2b.js"><link rel="prefetch" href="/assets/js/62.b5ac69e1.js"><link rel="prefetch" href="/assets/js/63.c75cbd98.js"><link rel="prefetch" href="/assets/js/64.d6fb2cb7.js"><link rel="prefetch" href="/assets/js/65.5db012e3.js"><link rel="prefetch" href="/assets/js/66.397bb60d.js"><link rel="prefetch" href="/assets/js/67.2b101eef.js"><link rel="prefetch" href="/assets/js/68.02a7c5a3.js"><link rel="prefetch" href="/assets/js/69.3e862fce.js"><link rel="prefetch" href="/assets/js/7.11a450ee.js"><link rel="prefetch" href="/assets/js/70.739f0920.js"><link rel="prefetch" href="/assets/js/71.8fdd9eeb.js"><link rel="prefetch" href="/assets/js/8.8643eeca.js"><link rel="prefetch" href="/assets/js/9.ebaca138.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.520ee453.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">50号公路的技术博客</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">主页</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">编程语言</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/javascript/" class="nav-link">javascript</a></li><li class="dropdown-item"><!----> <a href="/php/基本语法.html" class="nav-link">php</a></li><li class="dropdown-item"><!----> <a href="/java/基本介绍.html" class="nav-link">java</a></li><li class="dropdown-item"><!----> <a href="/NodeJs/基本介绍.html" class="nav-link">NodeJs</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/markdown/基本语法.html" class="nav-link">markdown</a></li><li class="dropdown-item"><!----> <a href="/tooldocs/工具文档.html" class="nav-link">tooldocs</a></li><li class="dropdown-item"><!----> <a href="/webpack/" class="nav-link">webpack</a></li><li class="dropdown-item"><!----> <a href="/shell/" class="nav-link">shell</a></li><li class="dropdown-item"><!----> <a href="/Linux/" class="nav-link">Linux</a></li><li class="dropdown-item"><!----> <a href="/XML/" class="nav-link">XML</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">项目</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/project/reactChatPC.html" class="nav-link">react-chat</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vue/" class="nav-link">vue</a></li><li class="dropdown-item"><!----> <a href="/react/" class="nav-link">react</a></li><li class="dropdown-item"><!----> <a href="/electron/" class="nav-link">electron</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/clispaul3" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">主页</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">编程语言</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/javascript/" class="nav-link">javascript</a></li><li class="dropdown-item"><!----> <a href="/php/基本语法.html" class="nav-link">php</a></li><li class="dropdown-item"><!----> <a href="/java/基本介绍.html" class="nav-link">java</a></li><li class="dropdown-item"><!----> <a href="/NodeJs/基本介绍.html" class="nav-link">NodeJs</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/markdown/基本语法.html" class="nav-link">markdown</a></li><li class="dropdown-item"><!----> <a href="/tooldocs/工具文档.html" class="nav-link">tooldocs</a></li><li class="dropdown-item"><!----> <a href="/webpack/" class="nav-link">webpack</a></li><li class="dropdown-item"><!----> <a href="/shell/" class="nav-link">shell</a></li><li class="dropdown-item"><!----> <a href="/Linux/" class="nav-link">Linux</a></li><li class="dropdown-item"><!----> <a href="/XML/" class="nav-link">XML</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">项目</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/project/reactChatPC.html" class="nav-link">react-chat</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vue/" class="nav-link">vue</a></li><li class="dropdown-item"><!----> <a href="/react/" class="nav-link">react</a></li><li class="dropdown-item"><!----> <a href="/electron/" class="nav-link">electron</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/clispaul3" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/NodeJs/基本介绍.html" class="sidebar-link">基本介绍</a></li><li><a href="/NodeJs/express.html" class="active sidebar-link">express框架</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/NodeJs/express.html#文档" class="sidebar-link">文档</a></li><li class="sidebar-sub-header"><a href="/NodeJs/express.html#基本使用" class="sidebar-link">基本使用</a></li><li class="sidebar-sub-header"><a href="/NodeJs/express.html#静态资源服务" class="sidebar-link">静态资源服务</a></li><li class="sidebar-sub-header"><a href="/NodeJs/express.html#路由" class="sidebar-link">路由</a></li><li class="sidebar-sub-header"><a href="/NodeJs/express.html#中间件" class="sidebar-link">中间件</a></li><li class="sidebar-sub-header"><a href="/NodeJs/express.html#request对象" class="sidebar-link">request对象</a></li><li class="sidebar-sub-header"><a href="/NodeJs/express.html#response对象" class="sidebar-link">response对象</a></li><li class="sidebar-sub-header"><a href="/NodeJs/express.html#restful设计规范" class="sidebar-link">RESTful设计规范</a></li></ul></li><li><a href="/NodeJs/koa.html" class="sidebar-link">koa框架</a></li></ul> </div> <div class="page"> <div class="content"><h1 id="express框架"><a href="#express框架" aria-hidden="true" class="header-anchor">#</a> express框架</h1> <h2 id="文档"><a href="#文档" aria-hidden="true" class="header-anchor">#</a> 文档</h2> <p><a href="http://www.expressjs.com.cn/" target="_blank" rel="noopener noreferrer">文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="基本使用"><a href="#基本使用" aria-hidden="true" class="header-anchor">#</a> 基本使用</h2> <div class="language- extra-class"><pre class="language-text"><code>const express = require('express')
+const path = require('path')
+
+const app = express()
+// 配置web容器，提供静态文件服务
+app.use(express.static(path.resolve(__dirname,'../client')))
+app.get('/',(ree,res)=&gt;{
+    res.send('hello express 框架')
+})
+// 配置虚拟主机
+app.listen(&quot;3000&quot;,&quot;www.nodejs.com&quot;,()=&gt;{
+    console.log('listen port at 3000...')
+})
+</code></pre></div><h2 id="静态资源服务"><a href="#静态资源服务" aria-hidden="true" class="header-anchor">#</a> 静态资源服务</h2> <ol><li>app.use(path.resolve(__dirname,'../client'))</li> <li>app.use('/static',path.resolve(__dirname,'../client'))</li> <li>托管多个文件夹：
+app.use(express.static('public')); app.use(express.static('files'))</li> <li>存放静态文件的目录名不会出现在 URL 中，下面的代码不会生效</li></ol> <div class="language- extra-class"><pre class="language-text"><code>   app.use('/static/js/index.js',(req,resp)=&gt;{
+       resp.send('hello nodejs')
+   })
+</code></pre></div><h2 id="路由"><a href="#路由" aria-hidden="true" class="header-anchor">#</a> 路由</h2> <ol><li>app.METHOD(PATH, HANDLER)</li> <li>例子</li></ol> <div class="language- extra-class"><pre class="language-text"><code> app.get('/', function (req, res) {
+     res.send('Hello World!')
+ })
+ app.post('/', function (req, res) {
+     res.send('Got a POST request')
+ })
+ app.put('/user', function (req, res) {
+     res.send('Got a PUT request at /user')
+ })
+ app.delete('/user', function (req, res) {
+     res.send('Got a DELETE request at /user')
+ })
+</code></pre></div><ol start="3"><li>querystring不是路由的一部分</li> <li>路由的模糊匹配</li> <li>动态参数</li></ol> <div class="language- extra-class"><pre class="language-text"><code>客户端请求地址：/user/laoxie/city/guangzhou
+服务端匹配: app.use('/user/:username/city/:city',(req,resp)=&gt;{
+    const params = req.params
+})
+</code></pre></div><ol start="6"><li>路由回调</li></ol> <div class="language- extra-class"><pre class="language-text"><code>单个回调：
+   app.get('/example/a', function (req, res) {
+       res.send('Hello from A!')
+   })
+多个回调：
+   app.get('/example/b', function (req, res, next) {
+       console.log('the response will be sent by the next function ...')
+       next()
+   }, function (req, res) {
+         res.send('Hello from B!')
+   })
+
+
+   var cb0 = function (req, res, next) {
+       console.log('CB0')
+       next()
+   }
+   var cb1 = function (req, res, next) {
+       console.log('CB1')
+       next()
+   }
+   var cb2 = function (req, res) {
+       res.send('Hello from C!')
+   }
+   app.get('/example/c', [cb0, cb1, cb2])
+</code></pre></div><ol start="7"><li>app.route()</li></ol> <div class="language- extra-class"><pre class="language-text"><code>app.route('/book')
+    .get(function (req, res) {
+       res.send('Get a random book')
+    })
+    .post(function (req, res) {
+       res.send('Add a book')
+    })
+    .put(function (req, res) {
+       res.send('Update the book')
+    })
+</code></pre></div><ol start="8"><li>express.Router: 路由模块</li></ol> <div class="language- extra-class"><pre class="language-text"><code>文件：bird.js
+
+var express = require('express')
+var router = express.Router()
+// 当前模块的所有请求都会调用这个回调
+router.use(function timeLog (req, res, next) {
+    console.log('Time: ', Date.now())
+    next()
+})
+// define the home page route
+router.get('/', function (req, res) {
+   res.send('Birds home page')
+})
+// define the about route
+router.get('/about', function (req, res) {
+   res.send('About birds')
+})
+module.exports = router
+
+文件：app.js
+cosnt router = require('./router/bird')
+app.use('/bird',router)
+</code></pre></div><ol start="9"><li>处理404响应</li></ol> <div class="language- extra-class"><pre class="language-text"><code> app.use(function (req, res, next) {
+     res.status(404).send(&quot;Sorry can't find that!&quot;)
+ })
+</code></pre></div><h2 id="中间件"><a href="#中间件" aria-hidden="true" class="header-anchor">#</a> 中间件</h2> <ol><li>内置中间件：express.static()，express唯一内置的中间件</li> <li>自定义中间件：app.use([url]，function(req,resp,next)) -&gt;响应路由的中间件</li></ol> <div class="language- extra-class"><pre class="language-text"><code>var express = require('express');
+var app = express();
+
+app.use(function(request,response,next){
+if(request.url === '/'){
+response.writeHead(200,{&quot;Content-Type&quot;:&quot;text/plain&quot;});
+response.end(&quot;This is home\n&quot;);
+} else {
+next();
+}
+})
+app.use(function(request,response,next){
+if(request.url === '/about'){
+response.writeHead(200,{&quot;Content-Type&quot;:&quot;text/plain&quot;});
+response.end(&quot;This is about\n&quot;);
+} else {
+next();
+}
+})
+app.use(function(request,response,next){
+response.writeHead(404,{&quot;Content-Type&quot;:&quot;text/plain&quot;});
+response.end(&quot;404 not found!\n&quot;);
+})
+app.listen(1234,'localhost');
+</code></pre></div><ol start="3"><li>第三方中间件</li></ol> <div class="language- extra-class"><pre class="language-text"><code>body-parser ：解析请求体中的数据，并将其保存为Request对象的body属性。
+
+cookie-parser ：解析客户端cookie中的数据，并将其保存为Request对象的cookie属性
+
+express-session ：解析服务端生成的sessionid对应的session数据，并将其保存为Request对象的session属性
+</code></pre></div><h2 id="request对象"><a href="#request对象" aria-hidden="true" class="header-anchor">#</a> request对象</h2> <h2 id="response对象"><a href="#response对象" aria-hidden="true" class="header-anchor">#</a> response对象</h2> <h2 id="restful设计规范"><a href="#restful设计规范" aria-hidden="true" class="header-anchor">#</a> RESTful设计规范</h2> <p><a href="http://www.ruanyifeng.com/blog/2018/10/restful-api-best-practices.html" target="_blank" rel="noopener noreferrer">文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新: </span> <span class="time">2/19/2019, 7:33:44 AM</span></div></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/NodeJs/基本介绍.html" class="prev">
+          基本介绍
+        </a></span> <span class="next"><a href="/NodeJs/koa.html">
+          koa框架
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.9420e4cb.js" defer></script><script src="/assets/js/4.501ed829.js" defer></script>
+  </body>
+</html>
