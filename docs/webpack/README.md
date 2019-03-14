@@ -286,7 +286,28 @@
       ]
   }
   ```
-
+  + <span style="color:red;font-size:18px;">optimize-css-assets-webpack-plugin</span>：压缩 css 文件，必须在生产环境下才能压缩
+  + 如果使用了这个插件，则无法压缩 js 文件，必须再单独配置 js 压缩
+  + npm install uglifyjs-webpack-plugin -D: 这个插件会使得编译速度特别慢
+  + 配置
+  ```javascript
+  // webpack.config.js
+  const OptimizeCss = require('optimize-css-assets-webpack-plugin')
+  const UglifyJs = require('uglifyjs-webpack-plugin')
+  optimization:{
+    minimizer:[
+      new UglifyJs({
+          cache: true,
+          parallel: true,
+          sourceMap: true
+      }),
+      new OptimizeCss()
+    ]
+  }
+  ```
 ## 图片loader
+## babel配置
+  + npm install babel-loader @babel/core @babel/preset-env -D
+
 ## plugin
   + 插件的目的在于解决 loader 无法实现的其他事
