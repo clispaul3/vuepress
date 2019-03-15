@@ -13,7 +13,9 @@ const sidebar = {
         'chameleon',
         'uniapp',
         'babel',
-        'Flutter'
+        'Flutter',
+        '单元测试',
+        '正则'
     ],
     '/NodeJs/':[
         '基本介绍',
