@@ -56,6 +56,11 @@ const nav = [
         text:'框架',
         items:[
             {
+                text:'angular',
+                link:'/angular/'
+            }
+            ,
+            {
                 text:'vue',
                 link:'/vue/'
             },{

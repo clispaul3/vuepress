@@ -77,6 +77,9 @@ const sidebar = {
     '/react/':[
         ''
     ],
+    '/angular/':[
+        ''
+    ],
     '/electron/':[
         ''
     ],
