@@ -1,4 +1,8 @@
 # typescript
+## 基本使用
+  + npm install typescript -g
+  + tsc index.ts
+  + tsc --init: 初始化配置文件
 ## 数据类型
    + any: 任意数据类型
    ```typescript
@@ -143,3 +147,88 @@
         var Iobj:Child = { v1:12, v2:23} 
         console.log("value 1: "+Iobj.v1+" value 2: "+Iobj.v2)
       ```
+## tab切换标签
+```ts
+// html 结构
+    <div class="container">
+        <p>
+            <span class="tab-btn1">tab1</span>
+            <span class="tab-btn2 current">tab2</span>
+            <span class="tab-btn3">tab3</span>
+            <span class="tab-btn4">tab4</span>
+        </p>
+        <div class="content">
+
+        </div>
+    </div>
+    
+interface ParamConfig {
+    container:string,
+    tablist:Array<TabItem>
+    content:string,
+    current:number
+}
+interface TabItem {
+    className:string,
+    text:string
+}
+class Tab {
+    config:ParamConfig
+    constructor(config:ParamConfig){
+        this.config = config
+        this.init()
+        this.bindEvent()
+    }
+    init():void{
+        this.toggleTab(this.config.current)
+    }
+    toggleTab(current:number):void{
+        let { tablist,content } = this.config
+        const divContent = document.querySelector(content)
+        if(!divContent) throw new Error('divContent is null')
+        divContent.innerHTML = tablist[current].text
+        for(let i=0;i<tablist.length;i++){
+            const tabBtn = document.querySelector('.'+tablist[i].className)
+            if(!tabBtn) throw new Error('tabBtn is null')
+            tabBtn.classList.remove('current')
+        }
+        const tabBtn = document.querySelector('.'+tablist[current].className)
+        if(!tabBtn) throw new Error('tabBtn is null')
+        tabBtn.classList.add('current')
+    }
+    bindEvent():void{
+        for(let i=0;i<this.config.tablist.length;i++){
+            const item = this.config.tablist[i]
+            const tabBtn = document.querySelector('.'+item.className)
+            if(!tabBtn) throw new Error('tabBtn is null')
+            tabBtn.addEventListener('click',()=>{
+                if(this.config.current == i) return
+                this.config.current = i
+                this.toggleTab(i)
+            })
+        }
+    }
+}
+const config:ParamConfig= {
+    container:'.container',
+    content:'.content',
+    current:1,
+    tablist:[
+        {
+            className:'tab-btn1',
+            text:'我是第一个tab标签的内容'
+        },
+        {
+            className:'tab-btn2',
+            text:'我是第二个tab标签的内容'
+        },{
+            className:'tab-btn3',
+            text:'我是第三个tab标签的内容'
+        },{
+            className:'tab-btn4',
+            text:'我是第四个tab标签的内容'
+        }
+    ]
+}
+new Tab(config)
+```
