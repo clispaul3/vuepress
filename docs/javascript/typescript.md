@@ -232,3 +232,6 @@ const config:ParamConfig= {
 }
 new Tab(config)
 ```
+## 自动化编译
+  + 初始化配置文件: tsc --init
+  + Ternimal->run task->tsc:watch
