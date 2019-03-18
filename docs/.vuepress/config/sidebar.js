@@ -65,7 +65,8 @@ const sidebar = {
         '基本语法'
     ],
     '/tooldocs/':[
-        '工具文档'
+        '工具文档',
+        '设计模式'
     ],
     '/project/':[
         'reactChatWeb',

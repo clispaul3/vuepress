@@ -38,6 +38,21 @@
   + 作用域对象：$scope 
 ## 控制器对象
   + 控制器的复用相当于是组件的复用
+  + 控制器之间通信
+    1. 父子通信
+    ```js
+    // 父控制器
+    $scope.data = {
+      name:'parent'
+    }
+    // 子控制器中
+    $scope.$parent.data = {
+      name:'parent'
+    }
+    ```
+    2. 在模块中注入服务的方式实现共享
+    3. 基于事件 $emit $on $broadcast
+    4. 通过 $rootScope
 ## 依赖注入
   + 依赖对象以形参的形式注入进来使用，这种方式就是依赖注入
 ## 依赖对象
@@ -45,9 +60,30 @@
 ## 模块对象
 ```js
   <div ng-app='container'></div>
-  const app = angular.module('container')
+  // 传递参数不止一个,代表新建模块;空数组代表该模块不依赖其他模块
+  // 只有一个参数(模块名),代表获取模块
+  const app = angular.module('container',[])
+  const getApp = angular.module('container')
+  console.log(app == getApp)  // true
+
 ```
-  
+## 服务
+  + 服务是一个函数或对象
+  + 内置服务: $http $location $timeout等
+  + 自定义服务
+    1. service
+    2. factory
+    3. provider
+  + 在控制器的回调中可以使用服务
+  + 服务的本质就是依赖对象
+  ```js
+  app.service('myService',function(){
+    this.name = 'myService'
+  })
+  app.controller('myController',function($scope,myService){
+    console.log(myService.name)
+  })
+  ```
 ## 容器对象
   + $element
 ## 事件源对象
@@ -58,7 +94,7 @@
        console.log(ev)  // ev 就是事件源对象
    }
   ```
-## 服务对象
+## 注入器
 ## 例子
 ```js
 <div ng-app='container'>
