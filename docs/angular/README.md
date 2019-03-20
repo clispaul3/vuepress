@@ -36,6 +36,19 @@
 ## 作用域对象
   + 根作用域对象：$rootScope
   + 作用域对象：$scope 
+    - $scope.$watch
+    - $scope.$apply:使用原生的语法使得数据和视图同步(在异步的情况下)
+    - 异步的数据响应，需要使用$timeout
+  ```js
+  setTimeout(()=>{
+    $scope.$apply(function(){
+      $scope.username = '$scope.$apply'
+    })
+  })
+  $timeout(()=>{
+    $scope.username = '$timeout'
+  })
+  ```
 ## 控制器对象
   + 控制器的复用相当于是组件的复用
   + 控制器之间通信
@@ -67,6 +80,14 @@
   console.log(app == getApp)  // true
 
 ```
+  - controller: 用于注册控制器
+  - run: 用于初始化全局的数据
+```js
+  const app = angular('app',[])
+  app.run(['$rootScope]',function($rootScope){
+    $rootScope.name = 'angular-run()...'
+  }])
+```
 ## 服务
   + 服务是一个函数或对象
   + 内置服务: $http $location $timeout等
@@ -95,6 +116,54 @@
    }
   ```
 ## 注入器
+## 工具方法
+  1. angular.bind
+    - 修改 this 指向
+  ```js
+  function show(){
+    console.log(this==document)
+  }
+  angular.bind(document,show)()
+  ```
+  2. angular.copy
+    - 拷贝对象(浅拷贝)
+  ```js
+    let a = { age:18 }
+    let b = angular.copy(a)
+
+  ```
+  3. angular.extend
+
+## 自定义指令
+```js
+  // tem.html
+  <div>
+     {{ name }}
+     <p ng-init="username='laoxie'"></p>  // ng-init的作用域访问比scope更小，通过scope:true设置指令间单独作用域
+  </div>
+
+
+  const app = angular.module('app',[])
+  app.directive('hyInclude',function(){
+    return {
+      restrict:'ECAM', // E=>Element, A=>Attribute, C=>className, M=>注释, 区分大小写，可组合使用
+      replace:true,  // 模板替换外层壳
+      template:'<div>hello haoyun</div>',
+      templateUlr:'tem.html',  // 指定外部模板，可使用相对/绝对路径
+      scope:true,  // 独立作用域
+      scope:{},  // 隔离作用域，不受外部控制器作用域的影响
+      link:function(scope,element,attr){  // 依赖注入
+        scope.name = 'angular-directive'
+      },
+      controller:['$scope',function($scope){
+        
+      }]
+    }
+  })
+  <hy-include><hy-include>
+  <p hyInculde></p>
+  <p class='hyInclude'></p>
+```
 ## 例子
 ```js
 <div ng-app='container'>
@@ -105,6 +174,7 @@
     <button ng-click="ajaxData($event)"></div>
  </div>
 const app = angular.module('container',[])
+// 注册控制器是异步的
 app.controller('testController',($scope,$rootScope)=>{
     $rootScope.name = 'init'
     $scope.username = 'angualrJS'
