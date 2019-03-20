@@ -68,6 +68,9 @@ const sidebar = {
     '/markdown/':[
         '基本语法'
     ],
+    '/UML/':[
+        ''
+    ],
     '/tooldocs/':[
         '工具文档',
         '设计模式'
