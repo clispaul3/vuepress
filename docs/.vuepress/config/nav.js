@@ -28,6 +28,10 @@ const nav = [
                 link:'/markdown/基本语法'
             },
             {
+                text:'UML',
+                link:'/UML/'
+            },
+            {
                 text:'tooldocs',
                 link:'/tooldocs/工具文档'
             },{
