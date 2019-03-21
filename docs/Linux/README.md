@@ -21,11 +21,13 @@
       - 个人桌面
       - 服务器应用
       - 嵌入式系统
+   
 ## 安装系统
    + 开发环境：虚拟机 + 操作系统镜像文件 =>  virtual machine + CentOS
    1. 安装虚拟机
       + 配置虚拟机
    2. 安装Linux系统
+      + [镜像下载](http://mirrors.aliyun.com/centos/7/isos/x86_64/)
       + CD/DVD => 使用ISO镜像文件
       + 开启虚拟机
          + 将虚拟磁盘拆分为多个文件

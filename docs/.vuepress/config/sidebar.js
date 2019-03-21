@@ -74,7 +74,8 @@ const sidebar = {
     ],
     '/project/':[
         'reactChatWeb',
-        'reactChatPC'
+        'reactChatPC',
+        'FlowHYSUI'
     ],
     '/vue/':[
         ''

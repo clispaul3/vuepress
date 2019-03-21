@@ -50,6 +50,9 @@ const nav = [
             {
                 text:'react-chat',
                 link:'/project/reactChatPC'
+            },{
+                text:'FlowHYSUI',
+                link:'/project/FlowHYSUI'
             }
         ]
     },{
