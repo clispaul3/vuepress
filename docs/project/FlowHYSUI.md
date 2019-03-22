@@ -52,9 +52,8 @@
             initProjectInfo   
             初始化项目信息(读取项目的名称并写入页面，但其实在login.html中已经把项目名称写死了)
     ```
-  + <strong style="color:red;font-size:20px;font-weight:600;">dashboard</strong>
 
-## 页面流程
+  + <strong style="color:red;font-size:20px;font-weight:600;">dashboard</strong>
   1. dashboard.html
     - 登陆页面模板
   2. index.js:定义一些全局变量  
@@ -144,4 +143,27 @@ window.callClientRoleSet = require('callClientRoleSet');
 ### framework
 #### angular
 #### <strong style="color:red;font-size:20px;font-weight:600;">Compile.js</strong>
+  - 点击功能节点之后调用此模块，编译模板
+```js
+  - 定义了对象 AngularCompile
+  const AngularCompile = {
+    compileHtml:string,  // 节点模板
+      `<div ng-controller="ModelerController"  class="modelerEle relative-height">
+          <hy-include src="toModelerPage()"></hy-include>
+      </div>`
+    renderContainer:element,  // 模板容器
+      $(".layui-content-body")
+    compile:function,
+    _memoryGC:function,  // 如果页面已存在功能节点，则销毁之
+    _renderCompileHtml:function,
+    _getInjectorArr:function,
+    _clearIntervalArr:function,
+    initProjectInfo:function
+  }
+```
+
+#### <strong style="color:red;font-size:20px;font-weight:600;">Directive.js</strong>
+```js
+  通过自定义指令 hyInclude, 注入 $templateRequest，来调用功能节点需要使用到的模板
+```
   
