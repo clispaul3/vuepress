@@ -104,6 +104,10 @@ const sidebar = {
     ],
     '/XML/':[
         ''
+    ],
+    '/principle/':[
+        '',
+        '数据绑定'
     ]
 }
 module.exports = {

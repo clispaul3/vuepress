@@ -80,6 +80,7 @@ const nav = [
         ]
     },
     { text:'GitHub',link:'https://github.com/clispaul3' },
+    { text:'源码',link:'/principle/'}
 ]
 module.exports = {
     nav
