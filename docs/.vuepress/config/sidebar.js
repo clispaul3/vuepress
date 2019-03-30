@@ -107,7 +107,9 @@ const sidebar = {
     ],
     '/principle/':[
         '',
-        '数据绑定'
+        '数据绑定',
+        'Vue-cli',
+        '脚手架'
     ]
 }
 module.exports = {

@@ -166,4 +166,16 @@ window.callClientRoleSet = require('callClientRoleSet');
 ```js
   通过自定义指令 hyInclude, 注入 $templateRequest，来调用功能节点需要使用到的模板
 ```
+
+## 树形控件
+
+### 属性
+  1. 样式属性
+  2. 基本属性
+    - 树标题：LABEL:string
+    - 查询显示：SHOW_SEARCHITEM:string
+    - 是否显示：DISPLAYSETTING:object
+  3. 数据源
+  4. 树形控件
+  5. 排序
   
