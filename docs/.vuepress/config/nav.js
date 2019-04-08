@@ -18,6 +18,10 @@ const nav = [
             {
                 text:'NodeJs',
                 link:'/NodeJs/基本介绍'
+            },
+            {
+                text:'python',
+                link:'/python/基本介绍'
             }
         ]
     },{

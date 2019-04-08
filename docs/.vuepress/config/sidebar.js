@@ -63,7 +63,11 @@ const sidebar = {
         'JDBC',
         'IO流',
         'Socket',
-        'Spring'
+        'Spring',
+        '垃圾回收机制'
+    ],
+    '/python/':[
+        '基本介绍'
     ],
     '/markdown/':[
         '基本语法'
@@ -84,7 +88,14 @@ const sidebar = {
         ''
     ],
     '/react/':[
-        ''
+        '',
+        '虚拟DOM',
+        'ref',
+        '组件',
+        '表单',
+        'props',
+        'state',
+        '生命周期'
     ],
     '/angular/':[
         ''
