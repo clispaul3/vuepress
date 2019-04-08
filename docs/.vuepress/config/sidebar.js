@@ -2,6 +2,7 @@ const sidebar = {
     '/javascript/':[
         '改变this指向',
         'es6',
+        'ES7',
         '代码规范',
         'typescript',
         'JS性能优化',
@@ -91,17 +92,15 @@ const sidebar = {
     ],
     '/react/':[
         '',
-<<<<<<< HEAD
         '虚拟DOM',
         'ref',
         '组件',
         '表单',
         'props',
+        'props类型检查',
         'state',
-        '生命周期'
-=======
+        '生命周期',
         'JSX'
->>>>>>> fc4537fae20b295126241fc3f4257c26de660201
     ],
     '/angular/':[
         ''

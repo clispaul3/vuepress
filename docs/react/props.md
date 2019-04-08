@@ -25,7 +25,7 @@
   ```
 
 ## defaultProps
-  - 通过defaultProps可以设置组件的初始props
+  - 通过defaultProps可以设置组件的初始props，props的默认值
   ```js
     const container = document.getElementById('container')
     function MySelect(props) {
@@ -34,6 +34,10 @@
           {props.name}
         </div>
       )
+      // 或者使用ES7静态变量的方式定义
+      static defaultProps = {
+        name:'test'
+      }
     }
     MySelect.defaultProps = {
       name:'test'
