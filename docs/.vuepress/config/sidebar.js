@@ -86,7 +86,8 @@ const sidebar = {
         'vuex'
     ],
     '/react/':[
-        ''
+        '',
+        'JSX'
     ],
     '/angular/':[
         ''
