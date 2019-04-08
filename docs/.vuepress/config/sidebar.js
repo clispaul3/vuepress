@@ -77,7 +77,8 @@ const sidebar = {
     ],
     '/tooldocs/':[
         '工具文档',
-        '设计模式'
+        '设计模式',
+        'UI自动化测试'
     ],
     '/project/':[
         'reactChatWeb',
@@ -85,10 +86,12 @@ const sidebar = {
         'FlowHYSUI'
     ],
     '/vue/':[
-        ''
+        '',
+        'vuex'
     ],
     '/react/':[
         '',
+<<<<<<< HEAD
         '虚拟DOM',
         'ref',
         '组件',
@@ -96,6 +99,9 @@ const sidebar = {
         'props',
         'state',
         '生命周期'
+=======
+        'JSX'
+>>>>>>> fc4537fae20b295126241fc3f4257c26de660201
     ],
     '/angular/':[
         ''
@@ -118,7 +124,9 @@ const sidebar = {
     ],
     '/principle/':[
         '',
-        '数据绑定'
+        '数据绑定',
+        'Vue-cli',
+        '脚手架'
     ]
 }
 module.exports = {

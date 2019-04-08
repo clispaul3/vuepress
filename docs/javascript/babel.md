@@ -74,3 +74,23 @@
    + babel-preset-env: 最常用的转译器。通过在.babelrc中配置env选项，可以让代码兼容不同版本的浏览器或者node
    + babel-preset-es2015: 将es2015版本的js代码转译为es5代码，对于es2016版本的代码或者es2017版本的代码不转译
    + babel-preset-react: 剥离流类型并将JSX转换为createElement调用，主要在转译react代码的时候使用
+
+## 浏览器模块化加载
+  1. 在浏览器的url中输入：chrome://flags/
+  2. 搜索javascript
+  3. 设置Experimental JavaScript 为 enabled
+  4. 准备代码
+  ```js
+  // index.html
+  <script src="./index.js" type="module"></script>
+  // module.js
+  export function test(){
+     console.log('test')
+  }
+  // index.js
+  import { test } from './module.js'
+  test()
+  ```
+
+## 直接使用JSX
+  `<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>`
