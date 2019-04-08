@@ -126,6 +126,7 @@
      1. yum groupinstall "GNOME Desktop" "Graphical Administration Tools"
      2. ln -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target
      3. reboot
+     4. 启动桌面  startx
 ## 安装vmtools
    1. 实现 windows 和 Centos 之间共享
 ## 设置共享文件夹

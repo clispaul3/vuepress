@@ -73,7 +73,8 @@ const sidebar = {
     ],
     '/tooldocs/':[
         '工具文档',
-        '设计模式'
+        '设计模式',
+        'UI自动化测试'
     ],
     '/project/':[
         'reactChatWeb',
@@ -81,7 +82,8 @@ const sidebar = {
         'FlowHYSUI'
     ],
     '/vue/':[
-        ''
+        '',
+        'vuex'
     ],
     '/react/':[
         ''
