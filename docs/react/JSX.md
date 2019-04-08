@@ -75,3 +75,48 @@ const MyComponents = {
 }
 ReactDOM.render(<MyComponents.MyInputTwo value="test" />,document.querySelector('#app'))
 ```
+
+## JSX的属性
+### 表达式
+```js
+   <MyComponent content={props.count+1}/>
+```
+### 字符串常量
+```js
+   <MyComponent description={"this is my component"}/>
+```
+### 三元运算符
+```js
+   {props.show ? <MyComponent /> : ''}
+```
+### 展开属性
+```js
+    function App1() {
+      return <Greeting firstName="Ben" lastName="Hector" />
+    }
+    function App2() {
+      const props = {firstName: 'Ben', lastName: 'Hector'}
+      return <Greeting {...props} />
+    }
+```
+
+## JSX中的子代
+  - 在既包含开始标签又包含结束标签的 JSX 表达式中，这两个标签之间的内容被传递为专门的属性：props.children
+
+## 返回数组
+  - React 组件也可以返回包含多个元素的一个数组
+  - 不需要使用额外的元素包裹数组中的元素
+  - 示例
+  ```js
+  const { Component } = React
+  class MyInputOne extends Component{
+    render(){
+      return [
+        // 不要忘记 key :)
+        <li key="A">First item</li>,
+        <li key="B">Second item</li>,
+        <li key="C">Third item</li>,
+      ]
+    }
+  }
+  ```
