@@ -79,7 +79,8 @@ const sidebar = {
     '/tooldocs/':[
         '工具文档',
         '设计模式',
-        'UI自动化测试'
+        'UI自动化测试',
+        'XPath'
     ],
     '/project/':[
         'reactChatWeb',
@@ -119,7 +120,9 @@ const sidebar = {
         '常用命令'
     ],
     '/XML/':[
-        ''
+        '',
+        '基本使用',
+        '语法规则'
     ],
     '/principle/':[
         '',

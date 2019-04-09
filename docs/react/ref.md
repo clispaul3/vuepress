@@ -1,4 +1,25 @@
 # ref
+  >`Refs 提供了一种方式，用于访问在 render 方法中创建的 DOM 节点或 React 元素`
+
+## 创建ref
+```js
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.myRef = React.createRef();
+  }
+  render() {
+    return <div ref={this.myRef} />;
+  }
+}
+```
+## 访问ref
+```js
+const node = this.myRef.current
+```
+  - 当 ref 属性被用于一个普通的 HTML 元素时，React.createRef() 将接收底层 DOM 元素作为它的 current 属性以创建 ref 
+  - 当 ref 属性被用于一个自定义类组件时，ref 对象将接收该组件已挂载的实例作为它的 current
+  - 你不能在函数式组件上使用 ref 属性，因为它们没有实例
 
 ## ref的挂载方式
 ### 挂载到DOM元素
@@ -59,6 +80,8 @@
         }
     }
 ```
+
+## ref转发
 
 ## 注意事项
   1. 函数方式定义的组件不能使用ref
