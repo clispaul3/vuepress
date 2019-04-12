@@ -26,7 +26,7 @@
    + Tomcat7.0支持Servlet3.0，而Tomcat6.0只支持Servlet2.5
 ## 修改配置
    + 修改端口号：conf->server.xml->
-      ```
+      ```java
       <Connector port="8088" protocol="HTTP/1.1"
                connectionTimeout="20000"
                redirectPort="8443" />
@@ -48,7 +48,7 @@
    + 通过配置tomcat为当前项目提供web服务
 ## 配置虚拟主机
    + 配置任意文件
-   ```
+   ```java
     <Host name="localhost"  appBase="webapps"
             unpackWARs="true" autoDeploy="true">
         <Context path="testdir" docBase="C:/test"/>
@@ -59,7 +59,7 @@
    + 配置虚拟主机
       1. host文件：127.0.0.1 www.javaweb.com
       2. server.xml
-      ```
+      ```java
       <Host name="www.javaweb.com"      
            appBase="G:\java-study\JSP\tomcat\apache-tomcat-7.0.92\webapps"
            unpackWARs="true" autoDeploy="true">
