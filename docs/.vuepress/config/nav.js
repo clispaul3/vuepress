@@ -50,6 +50,9 @@ const nav = [
             },{
                 text:'XML',
                 link:'/XML/'
+            },{
+                text:'SQL',
+                link:'/SQL/'
             }
         ]
     },{
