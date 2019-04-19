@@ -163,7 +163,9 @@ const sidebar = {
         'DDL',
         'DML',
         'DCL',
-        '实际案例'
+        '实际案例',
+        '字段类型',
+        'SELECT'
     ],
     '/XML/':[
         '',
