@@ -162,7 +162,8 @@ const sidebar = {
         '其他操作',
         'DDL',
         'DML',
-        'DCL'
+        'DCL',
+        '实际案例'
     ],
     '/XML/':[
         '',
