@@ -165,7 +165,8 @@ const sidebar = {
         'DCL',
         '实际案例',
         '字段类型',
-        'SELECT'
+        'SELECT',
+        '常见函数'
     ],
     '/XML/':[
         '',

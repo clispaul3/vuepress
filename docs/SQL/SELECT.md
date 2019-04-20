@@ -65,4 +65,14 @@
 
   >`<=>`
   - select name from use where email <=> null;
+#### IFNULL
+  - ifnull(age,0): 如果age为null，则将age置为0
+  - select name,salary*12+ifnull(bonus,0) as total_salary from employee;
+
+## 排序查询
+  >order by (asc|desc) asc:升序(默认)  desc:降序
+  - select name,age from user order by age asc;
+  - select name,age from user order by age desc;
+  - 多个字段排序：select name,age,salary from user order by age asc,salary desc;
+
   
