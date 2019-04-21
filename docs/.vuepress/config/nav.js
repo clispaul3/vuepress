@@ -83,6 +83,9 @@ const nav = [
             },{
                 text:'electron',
                 link:'/electron/'
+            },{
+                text:'Mybatis',
+                link:'/Mybatis/基本介绍'
             }
         ]
     },
