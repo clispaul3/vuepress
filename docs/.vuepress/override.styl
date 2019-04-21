@@ -12,6 +12,43 @@ $codeBgColor = #282c34
     font-size:16px;
     font-weight:500;
 }
+.sidebar,body{
+    overflow-y:scroll;
+    overflow-x:hidden;
+}
+.sidebar::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 5px;
+    height: 5px;
+}
+.sidebar::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 10px;max-height:30px;
+    background:#fff;
+    opacity:0;
+}
+.sidebar::-webkit-scrollbar-track {/*滚动条里面轨道*/
+    border-radius: 10px;
+    background:#fff;;
+}
+.sidebar:hover::-webkit-scrollbar-thumb{
+    background:#ddd;
+}
+
+body::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 5px;
+    height: 5px;
+}
+body::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 10px;max-height:30px;
+    background:#fff;
+    opacity:0;
+}
+body::-webkit-scrollbar-track {/*滚动条里面轨道*/
+    border-radius: 10px;
+    background:#fff;;
+}
+body:hover::-webkit-scrollbar-thumb{
+    background:#ddd;
+}
 .hero{
     >img{
         width:80px;height:80px;
