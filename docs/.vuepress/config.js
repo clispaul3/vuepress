@@ -1,4 +1,5 @@
 const { sidebar } = require('./config/sidebar')
+console.log(sidebar)
 const { nav } = require('./config/nav')
 module.exports = {
     title:'50号公路的技术博客',

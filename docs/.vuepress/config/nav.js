@@ -72,9 +72,7 @@ const nav = [
             {
                 text:'angular',
                 link:'/angular/'
-            }
-            ,
-            {
+            },{
                 text:'vue',
                 link:'/vue/'
             },{
